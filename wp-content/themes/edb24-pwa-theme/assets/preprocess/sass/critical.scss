@@ -1,0 +1,628 @@
+@import "../../_fonts";
+@import "../../_variables";
+
+html, body, button {
+    font-family: $theme_font_family;
+    color: $main_font_color;
+}
+/*Header Styles*/
+.header-wrapper {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin : auto;
+}
+
+.main-header {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "logo accessibility_and_external_links"
+        "logo header_cta";
+}
+
+.header-logo {
+    grid-area: logo;
+    width: $logo_width;
+    height: $logo_height;
+    align-self: flex-end;
+}
+
+.accessibility_and_external_links {
+    display: grid;
+    justify-self: end;
+    grid-area: accessibility_and_external_links;
+    grid-template-areas: "external_links accessibility_menu";
+}
+
+.accessibility_menu {
+    grid-area: accessibility_menu;
+    padding-left: 10px;
+    margin-top: -5px;
+}
+
+.menu-header-external-links-container {
+    display: flex;
+    grid-area: external_links;
+    align-self: self-start;
+    font-size: $menu_external_links_font_size;
+}
+
+.menu-header-external-links-container ul {
+    display: flex;
+    flex-flow: row;
+}
+.menu-header-external-links-container ul li {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-right: 1px;
+}
+
+.accessibility_header_button {
+    width: 40px;
+    display: inline-block;
+    cursor: pointer;
+}
+.dark_light_theme_button {
+    font-size: 34px;
+}
+.toogle_font_size span:first-of-type {
+    font-size:34px;
+}
+.toogle_font_size span:last-of-type {
+    font-size: $tooltip_font_size;
+}
+
+.header-cta {
+    grid-area: header_cta;
+    justify-self: self-start;
+    align-self: self-start;
+}
+
+.header-cta button {
+    padding-left: 75px;
+    padding-right: 75px;
+    margin-top: 13px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-weight: 700;
+    font-size: $main_header_cta_font_size;
+    z-index: 9;
+}
+
+/* Main Navigation*/
+.main-menu-logo {
+    display: none;
+}
+.main-menu {
+    font-size: $main_menu_font_size;
+}
+.menu-main-navigation-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-main-navigation-container ul {
+    display: flex;
+    align-items: center;
+}
+
+.menu-main-navigation-container li {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.main-menu-wrapper  {
+    position: sticky;
+    z-index: 10;
+    top: 0px;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sticky_nav .main-menu {
+  margin: auto;
+}
+
+.main-menu-wrapper input, .main-menu-wrapper label{
+    display: none; 
+}
+
+.main-menu {
+    display: grid;
+    grid-auto-flow: column;
+ /*Styles added for autoprefixer support*/
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+#toggle-main-menu, .menu-on {
+    display: none;
+}
+ 
+/*Body Styles*/
+.entry-title {
+    text-align: center;
+}
+
+.main_content_wrapper {
+    padding-top: 30px;
+    padding-bottom: 60px;
+    font-size: $main_font_size;
+    max-width: 1100px;
+    margin: auto;
+}
+/*code to make all pages except the front page thinner*/
+.main_content_wrapper.singular_page {
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+.main_content_wrapper p {
+    line-height: 1.5;
+}
+.main_content_wrapper p:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.main_content_wrapper h1 {
+    font-size: $main_h1_font_size;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.main_content_wrapper h2 {
+    font-size: $main_h2_font_size;
+    font-weight: 900;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+.main_content_wrapper h3 {
+    font-size: $main_h3_font_size;
+    font-weight: 900;
+}
+.main_content_wrapper h4 {
+    font-size: $main_h4_font_size;
+}
+
+/************* Custom Inline Styles ************/
+/*
+    NOTE: Ideally this will be substitute by a 
+    custom Gutenberg Element In the Future 
+*/
+    /* Custom Classes */
+.center {
+    text-align: center;
+}
+
+/*Front Page Styles*/
+.front-page-columns p {
+    margin-bottom: 0px;
+}
+.front-page-columns {
+     .wp-block-column {
+        border-right: 1px $light_gray solid;
+    }
+
+    .wp-block-column:last-child {
+        border-right: 0px;
+    }
+    .wp-block-button a {
+        min-width: 130px;
+    }
+}
+
+
+
+/* 1-of-Styles*/
+.post-7336 .entry-title {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-566, .post-144 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-566 {
+    max-width: 1100px;
+}
+.post-144 {
+    max-width: 900px;
+}
+.post-6131 h2 {
+    margin-bottom: 5px;
+}
+
+/*WordPress Display Specific Styles*/
+.wp-block-separator {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 400px;
+}
+
+.wp-block-column:not(:first-child) {
+    margin: 0px;
+}
+
+.wp-block-column {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0px;
+}
+
+.wp-block-column>.wp-block-button {
+    padding-bottom: 0px;
+}
+
+div.wp-block-media-text:not(.has-media-on-the-right) > .wp-block-media-text__media {
+    padding-right: 30px;
+}
+
+.wp-block-button {
+    margin-bottom: 10px;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+div.wp-block-media-text {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 25px;
+}
+
+
+div.wp-block-media-text:not(.has-media-on-the-right)>* {
+    padding-right: 20px;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+    padding: 0px;
+}
+
+.has-media-on-the-right .wp-block-media-text__content {
+    padding-right: 20px;
+}
+
+.has-media-on-the-right .wp-block-media-text__content {
+    order: -1;
+}
+
+.wp-block-column .wp-block-media-text__media {
+    align-self: flex-start;
+}
+.wp-block-media-text__media {
+    align-self: center;
+    flex-shrink: 0;
+}
+
+.wp-block-media-text__media img {
+    display: block;
+    margin: auto;
+}
+
+.wp-block-button__link {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 30px;
+    padding-right: 30px;
+    word-break: normal;
+    font-size: $button_font_size;
+}
+
+/* List of Counties*/
+.counties_list {
+    max-width: 500px;
+    margin: auto;
+}
+.counties_list div  {
+    display: flex;
+    justify-content: center;
+}
+
+/* Left Justify Content*/
+div.content_justify_left {
+    justify-content: left;
+}
+.travel_coverage_title {
+    margin-bottom: 0px;
+}
+div.wp-block-media-text.travel_coverage_element {
+    margin-bottom: 0px;
+}
+
+div.wp-block-media-text.travel_coverage_element .wp-block-media-text__content {
+    align-self: flex-start;
+    margin-top: 25px;
+}
+div.travel_coverage_element + .wp-block-separator {
+    margin-top: 0px;
+}
+
+/* List of Links*/
+ul.links_list li:before{
+    content: '';
+    display: inline-block;
+    height: 23px;
+    width: 23px;
+ }
+
+ .links_list {
+    padding-bottom: 20px;
+    font-size: $links_list_font_size;
+    padding-left: 30px;
+    text-indent: -30px;
+}
+
+.links_list a {
+    font-weight: 700;
+}
+
+.links_list li+li {
+    padding-top: 20px;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {          
+    .main-menu-wrapper.sticky_nav {
+        position: fixed;
+        width: 100vw;
+    }
+}
+
+/*Styles specific for adding the logo to the main
+ sticky menu*/
+@media only screen and (min-width: 1400px) {
+    .sticky_nav .main-menu {
+        grid-auto-flow: column;
+    /*Styles added for autoprefixer support*/
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+        max-width: 1200px;
+    }
+    .sticky_nav .main-menu .main-menu-logo {
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 1900px) {
+    .main-header {
+        max-width: 1250px;
+    }   
+    .main-menu {
+        max-width: 1100px;
+    }
+    .main-menu-logo {
+        margin-left: 90px;
+    } 
+
+    .main_banner {
+        max-width: 2500px;
+        margin: auto;
+    }
+}
+
+/* Mobile Design*/
+@media only screen and (max-width: 1050px) {
+    .accessibility_menu {
+        display: none;
+    }
+    .main-header {
+        grid-template-areas: 
+         "accessibility_and_external_links accessibility_and_external_links"
+         "logo header_cta"
+         "logo header_cta";
+         grid-template-columns: 1fr 1fr;
+    }
+    .main-header>* {
+        align-self: center;
+        justify-self: center;
+    }
+    .menu-header-external-links-container {
+        justify-content: flex-end;
+    }
+    .accessibility_and_external_links {
+        justify-self: auto;
+        margin-bottom: 10px;
+    }
+    .header-cta {
+        align-self: center;
+    }
+    .main-menu-wrapper {
+        display: block;
+    }
+    .menu-main-navigation-container ul{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .menu-main-navigation-container li {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .main_content_wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    .main_content_wrapper h1 {
+        margin-bottom: 15px;
+    }
+    .main_content_wrapper h3 {
+        margin-top: 0px;
+    }
+    .wp-block-columns {
+        flex-flow: row wrap;
+    }
+    div.wp-block-column {
+        flex-basis: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    div.wp-block-media-text {
+        justify-content: flex-start;
+    }
+
+    .singular_page.main_content_wrapper {
+        border-top: 0px;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    .front-page-columns .wp-block-column {
+        border-right: 0px;
+     }
+     
+     /*Custom Classes*/
+     div.counties_list {
+        flex-flow: row;
+    }
+    div.counties_list .wp-block-column{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .disable_on_mobile {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width: 850px) {
+    /*Main Menu Mobile*/
+    .header-wrapper {
+        display: grid;
+        /*IMPORTANT: This value needs to change depending on the height of the sticky menu*/
+        margin-top: 50px;
+    }
+    .main-menu-wrapper {
+        padding-left: 0vw; 
+        padding-right: 0vw;
+    }
+
+    .main-nav-.main-menu-wrapper input, .main-menu-wrapper label{
+        display: inline;
+    }
+    
+    .menu-on {
+        display: block;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: calc(100% - 30px);
+        padding: 15px;
+        z-index: 12;
+    }
+
+    .menu-off {
+        position: fixed;   
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom:0px;
+        z-index: 10;
+        display: none;
+    }
+
+    div.main-menu {
+        display: block;
+    }
+
+    .main-menu-wrapper {
+        position: fixed;
+        top: -400px;
+        left: 0px;
+        width: 100%;
+        z-index: 11;
+        padding-top: 60px;
+        order: -1;
+    }
+    
+    #toggle-main-menu:checked ~ .main-menu-wrapper {
+        top: 0px;
+    }
+
+    #toggle-main-menu:checked ~ .menu-off {
+        display: block;
+    }
+    
+    .menu-main-navigation-container ul {
+        flex-direction: column;
+    }
+    .menu-main-navigation-container li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: var(--mobile_menu_items_font_size);  
+    }
+
+    label.menu-on span {
+        font-size: var(--mobile_menu_title_font_size);
+        padding-left: 5px;
+    }
+    .main-header {
+        grid-template-areas: 
+            "accessibility_and_external_links accessibility_and_external_links"
+            "logo logo"
+            "header_cta header_cta"; 
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .header-wrapper {
+        padding-left: 0vw;
+        padding-right: 0vw;
+    }
+    .header-logo {
+        max-width: 85vw;
+        height: auto;
+    }
+
+    .main_content_wrapper h2 {
+        margin-bottom: 20px;
+    }
+    .singular_page .wp-block-media-text {
+        flex-flow: column;
+    }
+    .singular_page .wp-block-media-text__media {
+        margin: auto;
+        max-width: 50vw;
+        margin-top: 10px;
+    }
+    div.wp-block-media-text:not(.has-media-on-the-right) > .wp-block-media-text__media {
+        padding-right: 15px;
+    }
+    .menu-header-external-links-container ul li {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .wp-block-media-text__media {
+        padding-bottom: 15px
+    }
+    .benefit_section_header {
+        text-align: center;
+        font-size: 21px;
+        font-weight: 700;
+    }
+}
+
+/*----------------------------- Custom Classes Styles ------------------------------------------*/
+
+/* Enroll In Person */
+@media only screen and (min-width: 850px) {
+    .enroll_in_person .wp-block-media-text__media {
+        position: relative;
+        top: -40px;
+    }
+}
+

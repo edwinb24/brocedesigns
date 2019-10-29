@@ -1,0 +1,18 @@
+/*Dark Theme Styles*/
+body.dark-mode {
+    background: #000;
+}
+body.dark-mode>* {
+    background: #000;
+    color: #fff;
+}
+body.dark-mode .accessibility_header_button {
+    color: #fff;
+}
+
+body.big-mode * {
+    font-size: 26px;
+}
+body.big-mode .toogle_font_size span:last-of-type {
+    font-size: 20px;
+}

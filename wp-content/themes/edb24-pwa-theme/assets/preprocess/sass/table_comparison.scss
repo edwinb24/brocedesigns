@@ -1,0 +1,211 @@
+@import "../../_variables";
+
+table.wp-block-table tbody tr + tr td {
+    border: 0px;
+}
+
+table.plan_header {
+    float: right;
+    margin-top: 0px;
+    width: 100%;
+    font-size: $comparison_table_plan_headers;
+}
+table.plan_header tbody td:not(:first-child) {
+    width: 40%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.plan_header tr:first-child td:nth-child(2){
+    background-color: $secundary_color;
+}
+.plan_header tr:first-child td:last-child{
+    background-color: $main_color;
+}
+.section_header {
+    font-size: $comparison_table_section_headers;
+    font-weight: 700;
+    background-color: $comparison_table_section_header_background;
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+    display: block;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    clear: both;
+}
+.section_header::before {
+    content: "+";
+    padding-right: 10px;
+}
+
+table.comparison_table_section {
+    display: none;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    width: 100%;
+    font-weight: 700;
+    font-size: $comparison_table_main_size;
+}
+table.comparison_table_section tbody td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+table.comparison_table_section tbody tr:first-child td:first-child {
+    text-align: left;
+}
+table.comparison_table_section tbody tr td + td {
+    text-align: center;
+}
+
+table.comparison_table_section tbody tr:first-child {
+    background-color: $white;
+    color: $main_font_color;
+}
+table.comparison_table_section tbody tr:first-child td {
+    border-radius: 0px;
+}
+
+.comparison_medical_and_hospital_table tr:first-child td:not(:first-child){
+    font-size: $comparison_table_medical_and_hospital_table_big_font;
+}
+.comparison_table_section tbody tr  td+td:not(:last-child){
+    border-right: 1px $comparison_table_borders_color solid;
+    border-left: 1px $comparison_table_borders_color solid;
+}
+.comparison_table_section  tbody tr:nth-child(even) td {
+    border-top: 1px $comparison_table_borders_color solid;
+    border-bottom: 1px $comparison_table_borders_color solid;
+}
+.comparison_table_section tbody tr:nth-child(even) td:first-child{
+    background: rgba($comparison_table_legend_column_background, $comparison_table_plus_plan_alpha) !important;
+}
+.comparison_table_section  tbody tr:nth-child(even) td:nth-child(2){
+    background: rgba($comparison_table_normal_plan_background, $comparison_table_plus_plan_alpha) !important;
+}
+.comparison_medical_and_hospital_table tbody tr:nth-child(even) td:nth-child(3),  .comparison_extra_benefits_table tbody tr:nth-child(even) td:nth-child(3){ 
+    background: rgba($comparison_table_plus_plan_background, $comparison_table_plus_plan_alpha) !important;
+}
+.comparison_drug_coverage_table tbody tr:nth-child(even) td:nth-child(3){ 
+    background: rgba($comparison_table_normal_plan_background, $comparison_table_plus_plan_alpha) !important;
+}
+.comparison_drug_coverage_table tbody tr:nth-child(even) td:nth-child(4), .comparison_drug_coverage_table tbody tr:nth-child(even) td:nth-child(5){ 
+    background: rgba($comparison_table_plus_plan_background, $comparison_table_plus_plan_alpha) !important;
+}
+
+table.comparison_drug_coverage_table tbody tr:first-child td{
+    background-color: $comparison_table_drug_coverage_table_first_row_background !important;
+    color: $main_font_color !important;
+    text-align: center;
+}
+
+.comparison_table_section  tbody tr td:nth-child(2) {
+    color: $secundary_color !important;
+}
+
+.comparison_medical_and_hospital_table tbody tr td:nth-child(3),  .comparison_extra_benefits_table tbody tr td:nth-child(3){ 
+    color: $main_color !important;
+}
+.comparison_drug_coverage_table tbody tr td:nth-child(3){ 
+    color: $secundary_color !important;
+}
+.comparison_drug_coverage_table tbody tr td:nth-child(4), .comparison_drug_coverage_table tbody tr td:nth-child(5){ 
+    color:$main_color !important;
+}
+
+.comparison_medical_and_hospital_table.comparison_table_desktop td:first-child, .comparison_extra_benefits_table.comparison_table_desktop td:first-child {
+    width: 20%;
+}
+
+.comparison_medical_and_hospital_table.comparison_table_desktop td:not(:first-child), .comparison_extra_benefits_table.comparison_table_desktop td:not(:first-child) {
+    width: 40%;
+}
+.comparison_drug_coverage_table.comparison_table_desktop td {
+    width: 20%;
+}
+
+.toggle_comparison_table {
+    display: none;
+}
+
+.section_header {
+    margin-bottom: 20px;
+}
+
+input:checked+.section_header {
+    margin-bottom: 0px;
+}
+.section_header::before {
+    font-size: 36px;
+}
+
+table.cta_table {
+    float: right;
+    margin-top: 0px;
+    width: 100%;
+    font-size: 19px;
+}
+
+table.cta_table tbody tr:first-child {
+    background-color: transparent;
+}
+
+table.cta_table tbody td+td {
+    width: 40%;
+}
+
+table.cta_table a.wp-block-button__link {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 3px;
+    font-size: $comparison_table_cta_button_size;
+}
+
+/****************Expanding and Collapsing Tables - Desktop -************************/
+@media only screen and (min-width: 650px) {
+    /*Medical and Hospital Table*/
+    #toggle_medical_and_hospital_table:checked ~ .section_header[for="toggle_medical_and_hospital_table"]::before {
+        content: "-";
+    }
+    #toggle_medical_and_hospital_table:checked ~ .comparison_medical_and_hospital_table.comparison_table_desktop {
+        display: table;
+    }
+    /*Part D Drug Coverage*/
+    #toggle_drug_coverage_table:checked ~ .section_header[for="toggle_drug_coverage_table"]::before {
+        content: "-";
+    }
+    #toggle_drug_coverage_table:checked ~ .comparison_drug_coverage_table.comparison_table_desktop {
+        display: table;
+    }
+    /*Extra Benefits*/
+    #toggle_extra_benefits_table:checked ~ .section_header[for="toggle_extra_benefits_table"]::before {
+        content: "-";
+    }
+    #toggle_extra_benefits_table:checked ~ .comparison_extra_benefits_table.comparison_table_desktop {
+        display: table;
+    }
+    .comparison_tables_header_mobile, 
+    .comparison_tables_benefits_button_mobile,
+    .comparison_tables_section_header_mobile {
+        display: none;
+    }
+}
+/****************Expanding and Collapsing Tables - Mobile -************************/
+@media only screen and (max-width: 650px) {
+    .plan_header, .section_header,  .comparison_table_desktop, .cta_table {
+        display: none;
+    }
+    table.comparison_table_mobile {
+        display: table;
+    }
+    table.comparison_table_mobile tbody td {
+        padding: 10px;
+    }
+    .comparison_tables_benefits_button_mobile {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 15px;
+    }
+}

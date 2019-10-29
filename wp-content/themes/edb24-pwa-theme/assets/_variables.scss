@@ -1,0 +1,73 @@
+$theme_font_family: "kievit";
+
+ /*Brand Styles*/
+$main_color: #8dc63f !default;
+$secundary_color: #006f51 !default;
+$tertiary_color: #63656A !default;
+
+$main_color_hover: #006f51 !default;
+$secundary_color_hover: #8dc63f !default;
+
+$logo_width: 236px;
+$logo_height: 83px;
+
+$list_of_links_image: "https://ik.imagekit.io/gkuqjysbk/php_and_sparrow_assets/spa_dkgreencaret_web_zUEnmhI1E.png";
+$list_of_links_hover_image: "https://ik.imagekit.io/gkuqjysbk/php_and_sparrow_assets/spa_ltgreencaret_web_snX386q-ag.png";
+$list_of_checkmarks_image: "https://ik.imagekit.io/gkuqjysbk/php_and_sparrow_assets/spa_dkgreen_checkmark_36px_y_hXeg_i7.png";
+
+/*Core Styles*/
+$main_font_color: #666;
+$white: #fff !default;
+$gray: #666 !default;
+$light_gray: #e2e2e2 !default;
+$black: #000 !default;
+$alpha: .9;
+$translucit_gray: rgba($black, $alpha) !default;
+
+/*Core Font Sizes*/
+    /*--Header--*/
+$tooltip_font_size: 14px;
+$bordered_tooltip_font_size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+$menu_external_links_font_size: 14px;
+$main_header_cta_font_size:  16px;
+    /*--Main Menu--*/
+$main_menu_font_size: 16px;
+$main_menu_sticky_box_shadow_color: #d6d6d6;
+    /*Main*/
+$main_font_size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+$button_font_size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+$links_list_font_size: calc(14px + (17 - 14) * ((100vw - 300px) / (1600 - 300)));
+$main_h1_font_size:  calc(29px + (35 - 29) * ((100vw - 300px) / (1600 - 300)));
+$main_h2_font_size:  24px;
+$main_h3_font_size:  calc(21px + (24 - 21) * ((100vw - 300px) / (1600 - 300)));
+$main_h4_font_size:  calc(18px + (21 - 18) * ((100vw - 300px) / (1600 - 300)));
+$main_disclaimer_font_size:  14px;
+    /*--Footer--*/
+$footer_menu_header_font_size: calc(15px + (19 - 15) * ((100vw - 300px) / (1600 - 300)));
+$footer_menu_items_font_size:  calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300)));
+$disclaimer_title_font_size:   calc(14px + (17 - 14) * ((100vw - 300px) / (1600 - 300)));
+$disclaimer_font_size:  12px;
+$footer_links_and_rights_font_size: 12px;
+$footer_menu_items_on_hover_underline_color: #ccc;
+$footer_menu_items_header_underline_color: #999;
+    /*--Pop Up--*/
+$pop_up_button_font_size:  calc(17px + (19 - 17) * ((100vw - 300px) / (1600 - 300)));
+$sticky_cta_font: calc(16px + (19 - 16) * ((100vw - 300px) / (1200 - 300))) ;
+    /*--Comparison Tables Font Size--*/
+$comparison_table_plan_headers: 19px;
+$comparison_table_section_headers: 24px;
+$comparison_table_main_size: calc(13px + (17 - 13) * ((100vw - 300px) / (1200 - 300))) ;
+$comparison_table_cta_button_size: 16px;
+$comparison_table_medical_and_hospital_table_big_font: calc(25px + (32 - 25) * ((100vw - 300px) / (1200 - 300))) ;
+$comparison_table_borders_color: #e2e6e5;
+$comparison_table_section_header_background: #a8a9ab;
+$comparison_table_legend_column_background: $light_gray;
+$comparison_table_normal_plan_background: $gray;
+$comparison_table_plus_plan_background: $gray;
+$comparison_table_plus_plan_alpha: 0.2;
+$comparison_table_drug_coverage_table_first_row_background: #e2e6e5;
+/*Mobile Core Font Sizes*/
+:root {
+    --mobile_menu_title_font_size: 26px;
+    --mobile_menu_items_font_size: 21px;
+}
