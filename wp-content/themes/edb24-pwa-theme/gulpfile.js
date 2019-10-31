@@ -26,7 +26,7 @@ function script() {
 
 function watch() {
     browserSync.init({
-        proxy: "http://local.php-acme-theme.com/",
+        proxy: "http://local.brocedesigns.com/",
         browser: "chrome.exe",
         files: [
             {

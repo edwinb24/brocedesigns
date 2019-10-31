@@ -139,25 +139,6 @@ html, body, button {
 .toogle_font_size span:last-of-type {
   font-size: 14px; }
 
-.header-cta {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: header_cta;
-  -ms-grid-column-align: self-start;
-      justify-self: self-start;
-  -ms-grid-row-align: self-start;
-      align-self: self-start; }
-
-.header-cta button {
-  padding-left: 75px;
-  padding-right: 75px;
-  margin-top: 13px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  font-weight: 700;
-  font-size: 16px;
-  z-index: 9; }
-
 /* Main Navigation*/
 .main-menu-logo {
   display: none; }
@@ -275,25 +256,6 @@ html, body, button {
 .front-page-columns .wp-block-button a {
   min-width: 130px; }
 
-/* 1-of-Styles*/
-.post-7336 .entry-title {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto; }
-
-.post-566, .post-144 {
-  margin-left: auto;
-  margin-right: auto; }
-
-.post-566 {
-  max-width: 1100px; }
-
-.post-144 {
-  max-width: 900px; }
-
-.post-6131 h2 {
-  margin-bottom: 5px; }
-
 /*WordPress Display Specific Styles*/
 .wp-block-separator {
   margin-top: 40px;
@@ -358,15 +320,6 @@ div.wp-block-media-text:not(.has-media-on-the-right) > * {
   word-break: normal;
   font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1600 - 300))); }
 
-/* List of Counties*/
-.counties_list {
-  max-width: 500px;
-  margin: auto; }
-
-.counties_list div {
-  display: flex;
-  justify-content: center; }
-
 /* Left Justify Content*/
 div.content_justify_left {
   justify-content: left; }
@@ -427,17 +380,6 @@ ul.links_list li:before {
     -ms-grid-column: 2; }
   .sticky_nav .main-menu .main-menu-logo {
     display: inline-block; } }
-
-@media only screen and (min-width: 1900px) {
-  .main-header {
-    max-width: 1250px; }
-  .main-menu {
-    max-width: 1100px; }
-  .main-menu-logo {
-    margin-left: 90px; }
-  .main_banner {
-    max-width: 2500px;
-    margin: auto; } }
 
 /* Mobile Design*/
 @media only screen and (max-width: 1050px) {
@@ -507,11 +449,7 @@ ul.links_list li:before {
   .accessibility_and_external_links {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2; }
-  .header-cta {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 2; } }
+    -ms-grid-column-span: 2; } }
 
 @media only screen and (max-width: 850px) {
   /*Main Menu Mobile*/
@@ -574,11 +512,6 @@ ul.links_list li:before {
   .accessibility_and_external_links {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2; }
-  .header-cta {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
     -ms-grid-column-span: 2; } }
 
 @media only screen and (max-width: 650px) {
@@ -607,10 +540,3 @@ ul.links_list li:before {
     text-align: center;
     font-size: 21px;
     font-weight: 700; } }
-
-/*----------------------------- Custom Classes Styles ------------------------------------------*/
-/* Enroll In Person */
-@media only screen and (min-width: 850px) {
-  .enroll_in_person .wp-block-media-text__media {
-    position: relative;
-    top: -40px; } }
