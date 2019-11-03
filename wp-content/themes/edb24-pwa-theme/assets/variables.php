@@ -11,5 +11,5 @@
     due to global variables 
 */
    $GLOBALS[ 'banner_image'] = "https://ik.imagekit.io/edwinb24/default-image.jpg";
-   $GLOBALS['banner_alternative_text'] = "wOOHOOOooo!!";
+   $GLOBALS['banner_alternative_text'] = "A!!";
 ?>

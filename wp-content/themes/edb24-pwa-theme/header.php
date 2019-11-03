@@ -48,17 +48,12 @@
     <div class="main-header">
         <div class="accessibility_and_external_links">
             <div class="menu-header-external-links-container">
-                <ul>
-                    <li  class="span_with_pop_up" id="member_portal" onclick="togglePopUp(this)">
-                        For Members
-                    </li>
-                    <li  class="span_with_pop_up" id="producer_portal" onclick="togglePopUp(this)">
-                        For Producers
-                    </li>
-                    <li  class="span_with_pop_up" id="provider_portal" onclick="togglePopUp(this)">
-                        For Providers
-                    </li>
-                </ul>
+                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/github-30_LeqgMdxb9.png"></a>
+                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/linkedin-30_aRqBRZuJM.png"></a>
+                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/facebook-30_Toe1navbC.png"></a>
+                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/twitter-30_6LxApzLPo.png"></a>
+                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/twitch-30_9fAtfBDmTU.png"></a>
+                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/instagram-30__di21_gDI.png"></a>
             </div>
             <div class="accessibility_menu">
                 <button class="dark_light_theme_button accessibility_header_button" onclick="invertColors()">

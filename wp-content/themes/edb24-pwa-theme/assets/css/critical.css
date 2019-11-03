@@ -62,7 +62,10 @@
 
 html, body, button {
   font-family: "kievit";
-  color: #666; }
+  color: #e2e2e2; }
+
+body {
+  background-color: #272727; }
 
 /*Header Styles*/
 .header-wrapper {
