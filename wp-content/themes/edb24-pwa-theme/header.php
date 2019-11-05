@@ -24,20 +24,12 @@
             include(dirname(__FILE__).'/assets/css/lazy_header.css');
             include(dirname(__FILE__).'/assets/css/lazy_content.css');
             include(dirname(__FILE__).'/assets/css/lazy_footer.css');
-            include(dirname(__FILE__).'/assets/css/accessibility_styles.css');
             ?>
         </style>
-        
         <script>
             <?php 
             include(dirname(__FILE__).'/assets/js/header_menu_bar.js');
             ?>       
-        </script>
-<!-- Lazy Scripts -->
-        <script>       
-            <?php 
-            include(dirname(__FILE__).'/assets/js/accessibility_buttons.js');
-            ?>
         </script>
     </head>
 <body>
@@ -46,7 +38,7 @@
 ?>
 <div class="header-wrapper">
     <div class="main-header">
-        <div class="accessibility_and_external_links">
+        <div class="social_media_links">
             <div class="menu-header-external-links-container">
                 <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/github-30_LeqgMdxb9.png"></a>
                 <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/linkedin-30_aRqBRZuJM.png"></a>
@@ -55,25 +47,6 @@
                 <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/twitch-30_9fAtfBDmTU.png"></a>
                 <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/instagram-30__di21_gDI.png"></a>
             </div>
-            <div class="accessibility_menu">
-                <button class="dark_light_theme_button accessibility_header_button" onclick="invertColors()">
-                    ◐
-                    <span class="accessibility_tooltip tooltip_styles">
-                        Adjust Contrast
-                    </span>
-                </button>
-                <button class="toogle_font_size accessibility_header_button" onclick="bigFonts()">
-                    <span>T</span><span>T</span>
-                    <span class="accessibility_tooltip tooltip_styles">
-                        Increase Text Size
-                    </span>
-                </button>
-            </div>
-        </div>
-        <div class="header-logo">
-            <a href="/">
-                <img src="<?php echo $logo_image ?>" alt="<?php echo $brand_name?> logo">
-            </a>
         </div>
     </div>
 </div>

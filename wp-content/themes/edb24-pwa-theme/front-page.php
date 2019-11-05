@@ -1,9 +1,4 @@
 <?php get_header(); ?>
-<div class="main_banner">
-	<a href="/request-a-kit">
-        <img src="<?php echo $GLOBALS["banner_image"] ?>" alt="<?php  echo $GLOBALS["banner_alternative_text"] ?>">
-    </a>
-</div>
 <div class="main_content_wrapper front_page">
 	<?php 
 	if( have_posts() ):

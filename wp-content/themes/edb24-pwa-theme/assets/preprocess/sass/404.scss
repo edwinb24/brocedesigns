@@ -1,19 +1,1 @@
 @import "../../_variables";
-
-.error-404 {
-    padding-left: 10vw;
-    padding-right: 10vw;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    border-top: 1px solid #000;
-}
-.error-404 .page-header {
-    text-align: center;
-}
-
-.error-404 h2 {
-    margin-top: 30px;
-}
-.error-404 p, .error-404 li {
-    font-size: $main_font_size;
-}

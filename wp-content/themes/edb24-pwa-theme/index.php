@@ -1,9 +1,4 @@
 <?php get_header(); ?>
-<div class="main_banner">
-	<a href="/">
-        <img src="<?php echo $banner_image ?>" alt="<?php echo $banner_alternative_text ?>">
-    </a>
-</div>
 <div>
 	<div>		
 		<?php 
