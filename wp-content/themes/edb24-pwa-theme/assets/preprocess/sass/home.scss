@@ -1,0 +1,20 @@
+@supports (display: grid) {
+    body  {
+        background-color: aqua;
+    }
+    .home_page_wrapper {
+        display: grid;
+        grid-template-columns: repeat(10,1fr);
+        grid-template-rows: repeat(10,1fr);
+    }
+    .home_picture {
+        grid-column: 1/5;
+        grid-row: 1/-1;
+        order: 1;
+    }
+  }
+  @supports not (display: grid) {
+    div {
+      float: right;
+    }
+  }

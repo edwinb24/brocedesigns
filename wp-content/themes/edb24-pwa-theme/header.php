@@ -11,6 +11,12 @@
             include(dirname(__FILE__).'/assets/variables.php');
             include(dirname(__FILE__).'/assets/google_tag_manager_header.html');
         ?>
+<!-- Home Styles -->
+        <style>       
+            <?php 
+                include(dirname(__FILE__).'/assets/css/home.css');
+            ?>
+        </style>
 <!-- Critical Styles -->
         <style>       
             <?php 
@@ -38,37 +44,5 @@
 ?>
 <div class="header-wrapper">
     <div class="main-header">
-        <div class="social_media_links">
-            <div class="menu-header-external-links-container">
-                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/github-30_LeqgMdxb9.png"></a>
-                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/linkedin-30_aRqBRZuJM.png"></a>
-                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/facebook-30_Toe1navbC.png"></a>
-                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/twitter-30_6LxApzLPo.png"></a>
-                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/twitch-30_9fAtfBDmTU.png"></a>
-                <a href="#"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/instagram-30__di21_gDI.png"></a>
-            </div>
-        </div>
-    </div>
-</div>
-<input type="checkbox" id="toggle-main-menu"/>
-<label class="menu-on" for="toggle-main-menu" onclick="toogleHamburgerIcon()">
-    <div class="hamburger-icon">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-    </div> 
-    <span>     
-        Menu
-    </span>
-</label>
-<label class="menu-off" for="toggle-main-menu" onclick="toogleHamburgerIcon()"></label>
-<div class="main-menu-wrapper">
-    <div class="main-menu">
-        <div class="main-menu-logo">
-            <a href="/request-a-kit">
-                <img src="<?php echo $logo_image ?>" alt="<?php echo $brand_name?> logo" onload="toogleMainMenuImage()">
-            </a>
-        </div>
-        <?php wp_nav_menu(array('theme_location'=>'header_menu')); ?>
     </div>
 </div>

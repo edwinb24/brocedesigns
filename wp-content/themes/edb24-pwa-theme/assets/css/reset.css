@@ -9,13 +9,6 @@ html, body {
     max-width: 100%;
     overflow-x: hidden; } }
 
-/*We want phone numbers to be unclickable on devices that are not mobile*/
-@media only screen and (min-width: 650px) {
-  a[href^="tel:"] {
-    text-decoration: none;
-    pointer-events: none;
-    cursor: default; } }
-
 html, body, ul, p, h6, figure, div, h2, iframe {
   margin: 0;
   padding: 0;
