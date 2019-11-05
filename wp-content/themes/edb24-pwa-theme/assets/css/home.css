@@ -1,13 +1,16 @@
 @supports (display: grid) {
   body {
-    background-color: aqua; }
+    background-color: aqua;
+    font-family: "montserrat"; }
   .home_page_wrapper {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[10];
     grid-template-columns: repeat(10, 1fr);
     -ms-grid-rows: (1fr)[10];
-    grid-template-rows: repeat(10, 1fr); }
+    grid-template-rows: repeat(10, 1fr);
+    width: 100vw;
+    height: 100vh; }
   .home_page_wrapper > *:nth-child(1) {
     -ms-grid-row: 1;
     -ms-grid-column: 1; }
@@ -310,10 +313,31 @@
     -ms-grid-column: 10; }
   .home_picture {
     -ms-grid-column: 1;
-    -ms-grid-column-span: 4;
-    grid-column: 1/5;
+    -ms-grid-column-span: 5;
+    grid-column: 1/6;
     grid-row: 1/-1;
-    order: 1; } }
+    order: 1;
+    background-image: url("https://ik.imagekit.io/edwinb24/main_photo_Tfbks8fvM.jpg");
+    background-position: center center;
+    background-size: cover; }
+  .name_and_intro {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    grid-column: 7/10;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 7;
+    grid-row: 3/10; }
+  .name {
+    display: block; }
+  .intro {
+    display: block; }
+  .description {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    grid-column: 7/10;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 5;
+    grid-row: 5/10; } }
 
 @supports not (display: grid) {
   div {

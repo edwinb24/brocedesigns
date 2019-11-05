@@ -1,16 +1,36 @@
 @supports (display: grid) {
     body  {
         background-color: aqua;
+        font-family: "montserrat";
     }
     .home_page_wrapper {
         display: grid;
         grid-template-columns: repeat(10,1fr);
         grid-template-rows: repeat(10,1fr);
+        width: 100vw;
+        height: 100vh;
     }
     .home_picture {
-        grid-column: 1/5;
+        grid-column: 1/6;
         grid-row: 1/-1;
         order: 1;
+        background-image: url("https://ik.imagekit.io/edwinb24/main_photo_Tfbks8fvM.jpg");
+        background-position: center center;
+        background-size: cover;
+    }
+    .name_and_intro {
+        grid-column: 7/10;
+        grid-row: 3/10;
+    }
+    .name {
+        display: block;
+    }
+    .intro {
+        display: block;
+    }
+    .description {
+        grid-column: 7/10;
+        grid-row: 5/10;
     }
   }
   @supports not (display: grid) {
