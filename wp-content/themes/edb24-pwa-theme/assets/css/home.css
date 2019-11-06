@@ -1,16 +1,21 @@
 @supports (display: grid) {
-  body {
-    background-color: aqua;
-    font-family: "montserrat"; }
   .home_page_wrapper {
+    background: var(--main-color);
+    /* Old browsers */
+    background: linear-gradient(45deg, var(--main-color) 0%, var(--secundary-color) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    color: var(--font-color);
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-style: normal;
+    width: 100vw;
+    height: 100vh;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[10];
     grid-template-columns: repeat(10, 1fr);
     -ms-grid-rows: (1fr)[10];
-    grid-template-rows: repeat(10, 1fr);
-    width: 100vw;
-    height: 100vh; }
+    grid-template-rows: repeat(10, 1fr); }
   .home_page_wrapper > *:nth-child(1) {
     -ms-grid-row: 1;
     -ms-grid-column: 1; }
