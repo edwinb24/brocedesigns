@@ -26,13 +26,30 @@
     }
     .name {
         display: block;
+        font-size: 65px;
+        font-weight: 500;
     }
     .intro {
         display: block;
     }
     .description {
         grid-column: 7/10;
-        grid-row: 5/10;
+        grid-row: 6/10;
+    }
+    nav.social_media {
+        grid-column: 9/11;
+        display: grid;
+        grid-template-columns: repeat(6, 30px);
+        padding: 10px;
+        grid-gap: 10px;
+        height: 30px;
+        align-self: start;
+        justify-self: end;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+    .social_media img{
+        filter: contrast(1.4) drop-shadow(7px 8px 3px rgba(0, 0, 0,.3));
     }
   }
   @supports not (display: grid) {
