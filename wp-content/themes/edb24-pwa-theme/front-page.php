@@ -1,15 +1,18 @@
 <?php get_header(); ?>
 <div class="home_page_wrapper">
 	<nav class="social_media">
-		<a href="https://www.facebook.com/edwin.b24"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-facebook-f-50_f5jaI8SnuZ.png" alt="Facebook Account"></a>
-		<a href="https://github.com/edwinb24"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-github-50_2tvaKuTdI.png" alt="GitHub Account"></a>
-		<a href="https://www.instagram.com/edwin_b24"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-instagram-50_G9KosLytl.png" alt="Instagram Account"></a>
-		<a href="https://www.linkedin.com/in/edwin-broce/"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-linkedin-50_TMqTNg4N8w.png" alt="LinkedIn Account"></a>
-		<a href="https://www.twitch.tv/edb24"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitch-50_WkLgdNVD3k.png" alt="Twitch Account"></a>
-		<a href="https://twitter.com/edwin_b24"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Twitter Account"></a>
+		<a href="https://www.facebook.com/edwin.b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-facebook-f-50_f5jaI8SnuZ.png" alt="Facebook Account"></a>
+		<a href="https://github.com/edwinb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-github-50_2tvaKuTdI.png" alt="GitHub Account"></a>
+		<a href="https://www.instagram.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-instagram-50_G9KosLytl.png" alt="Instagram Account"></a>
+		<a href="https://www.linkedin.com/in/edwin-broce/" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-linkedin-50_TMqTNg4N8w.png" alt="LinkedIn Account"></a>
+		<a href="https://www.twitch.tv/edb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitch-50_WkLgdNVD3k.png" alt="Twitch Account"></a>
+		<a href="https://twitter.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Twitter Account"></a>
 	</nav>
 	<nav class="main_navigation">
-
+		<a href="#">About</a>
+		<a href="#">The Lab</a>
+		<a href="#">Thoughts</a>
+		<a href="#">Stream</a>
 	</nav>
 	<h1 class="name_and_intro">
 		<span class="name">Edwin Broce</span>
