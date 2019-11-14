@@ -2,7 +2,7 @@
     .home_page_wrapper {
         background: var(--main-color); /* Old browsers */
         //background: linear-gradient(45deg,  var(--main-color) 0%,var(--secundary-color) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        background: linear-gradient(45deg, var(--main-color) 0%,var(--secundary-color) 75%);
+        background: linear-gradient(135deg, var(--main-color) 0%, var(--secundary-color) 65%);
         color: var(--font-color);
         font-family: 'Montserrat';
         font-weight: bold;
@@ -12,7 +12,6 @@
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         grid-template-rows: repeat(auto-fit,minmax(70px,1fr));
-        text-shadow: 7px 8px 3px rgba(0, 0, 0,.3);
     }
     .home_picture {
         grid-column: 1/6;
@@ -27,20 +26,23 @@
         grid-row: 3/5;
         margin-bottom: 10px;
         margin-top: 10px;
+        text-shadow: 7px 8px 3px rgba(0, 0, 0,.3);
     }
     .name {
         color: var(--secundary-font-color);
         display: block;
-        font-size: 65px;
+        font-size: calc(42px + (64 - 42) * ((100vw - 1000px) / (1600 - 1000)));
         font-weight: 500;
     }
     .intro {
         display: block;
+        font-size: calc(16px + (22 - 16) * ((100vw - 1000px) / (1600 - 1000)));
     }
     .description {
         grid-column: 7/10;
         grid-row: 5/6;
         margin-top: 35px;
+        text-shadow: 7px 8px 3px rgba(0, 0, 0, 0.3);
     }
     nav.social_media {
         grid-column: 9/11;
@@ -66,14 +68,25 @@
         grid-column: 7/10;
         grid-row: 7/8;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         text-align: center;
-        font-size: 27px;
+        justify-content: space-evenly;
+        font-size: calc(16px + (20 - 16) * ((100vw - 1000px) / (1600 - 1000)));
+    }
+    .main_navigation a {
+        align-self: center;
+        justify-self: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-radius: 30px;
+        background: linear-gradient(300deg, #4e73b1   0%, #f1efef 55%);
+        color: var(--secundary-color);
+        box-shadow: 5px 5px 20px #000;
     }
     .main_navigation a:hover {
-        color: var(--secundary-font-color);
-        transform: scale(1.2, 1.2);
-        filter: contrast(1.4) drop-shadow(7px 8px 3px rgba(0, 0, 0,.8)) contrast(175%) brightness(103%) invert(7%);
+        transform: scale(1.1, 1.1);
         transition: transform .3s
     }
   }

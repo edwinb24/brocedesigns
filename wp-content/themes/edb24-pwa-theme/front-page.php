@@ -11,7 +11,6 @@
 	<nav class="main_navigation">
 		<a href="#">About</a>
 		<a href="#">The Lab</a>
-		<a href="#">Thoughts</a>
 		<a href="#">Stream</a>
 	</nav>
 	<h1 class="name_and_intro">
