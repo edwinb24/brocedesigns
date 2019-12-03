@@ -1,10 +1,1 @@
-/*
-#001F52//blue
-#3D796F//green
-#E7EA71//golden
-*/
-:root {
-  --main-color: #3d796f;
-  --secundary-color: #001f52;
-  --font-color: #b8daff;
-  --secundary-font-color: #85c69b; }
+:root{--main-color:#3d796f;--secundary-color:#001f52;--font-color:#b8daff;--secundary-font-color:#85c69b}
