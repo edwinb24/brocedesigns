@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <script>
-		if('paintWorklet' in CSS) {
-            CSS.paintWorklet.addModule('./wp-content/themes/edb24-pwa-theme/assets/preprocess/scripts/custom_corner.js');        
-		}
+	<?php 
+		include(dirname(__FILE__).'/assets/js/houdini_index.js');
+	?>       
 </script>
 <div class="home_page_wrapper">
 	<nav class="social_media" aria-label="Social Media Navigation">
@@ -14,9 +14,9 @@
 		<a href="https://twitter.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Go to My Twitter"></a>
 	</nav>
 	<nav class="main_navigation"  aria-label="Main Navigation">
-		<a role="button" href="#">About</a>
-		<a role="button" href="#">The Lab</a>
-		<a role="button" href="#">Stream</a>
+		<div role="button"><a href="#">About</a></div>
+		<div role="button"><a href="#">The Lab</a></div>
+		<div role="button"><a href="#">Stream</a></div>
 	</nav>
 	<h1 class="name_and_intro">
 		<span class="name">Edwin Broce</span>
