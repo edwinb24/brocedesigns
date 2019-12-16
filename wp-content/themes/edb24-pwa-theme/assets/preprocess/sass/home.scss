@@ -67,7 +67,7 @@ a:focus {
         grid-template-columns: repeat(6, 25px);
         grid-template-rows: 28px;
         padding: 10px;
-        grid-gap: 10px;
+        gap: 10px;
         height: 30px;
         align-self: start;
         margin-top: 10px;
@@ -190,7 +190,7 @@ a:focus {
         }
 
       }
-    @media screen and (max-width: 1250px) {
+    @media screen and (max-width: 1250px) and (min-width: 700px){
         .home_page_wrapper {
             background: #e5e5e5;
             z-index: -1;
@@ -237,7 +237,7 @@ a:focus {
             position: relative;
             background: linear-gradient(135deg, var(--hover-color1) 0%, var(--hover-color2) 100%);
             text-shadow: 0px 0px #000;
-            transform: scale(1.01);
+            transform: scale(1.03);
             transition: transform 500ms;
         }
 
@@ -249,17 +249,16 @@ a:focus {
             width: 100%;
             height:  100%;
             box-shadow: 4px 4px 3px rgba(0,0,0,.3);
-            transition: box-shadow 1000ms;
         }
         /*🧙‍♂️ CSS Houdini!🧙*/
         @supports (background-image: paint(custom_corner)) {
-                .main_navigation div:hover {
-                    background-color: transparent;
-                    background-image: paint(custom_corner);
-                    --radius: #{$cut_corner}px;
-                    --onhover_color1: var(--hover-color1);
-                    --onhover_color2: var(--hover-color2);
-                }
+            .main_navigation div:hover {
+                background-color: transparent;
+                background-image: paint(custom_corner);
+                --radius: #{$cut_corner}px;
+                --onhover_color1: var(--hover-color1);
+                --onhover_color2: var(--hover-color2);
+            }
             .main_navigation div:hover:before {
                 width: calc(100% -  #{pitagoras($cut_corner)}px);
                 height:  calc(100% - #{pitagoras($cut_corner)}px);
@@ -286,7 +285,7 @@ a:focus {
                         brightness(100%) 
                         grayscale(100%) 
                         drop-shadow(4px 4px 2px rgba(0,0,0,.3));    
-            transition: filter 1s transform 1s;
+            transition: filter 400ms linear, transform 400ms;
         }
         
         nav.social_media a:hover {
@@ -312,6 +311,128 @@ a:focus {
             linear-gradient(68deg,rgba(255,215,0,.25) 50%,transparent 50%),
             linear-gradient(68deg,rgba(255,215,0,.17) 53%,transparent 53%);
         }
+    }
+    @media screen and (max-width: 700px) and (min-width: 450px) {
+        .home_picture {
+            grid-column: 1/-1;
+            grid-row: 1/-1;
+            filter: blur(1.5px);
+            position: relative;
+            z-index: -1;
+        }
+        .home_picture:before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .home_page_wrapper {
+            opacity: 0.9;
+            color: #fefefe;
+            grid-template-rows: repeat(auto-fit,minmax(70px,1fr));
+            grid-template-columns: repeat(auto-fit,minmax(70px,1fr));
+            font-family: Montserrat;
+        }
+        .home_page_wrapper:before {
+            content: "";
+            width: 92vw;
+            height: 92vh;
+            position: fixed;
+            border: 5px solid #fff;
+            top: 4vh;
+            left: 4vw;
+            z-index: 0;
+        }
+        .name_and_intro, .description {
+            width: 70vw;
+            margin-left: 15vw;
+            margin-right: 15vw;
+            justify-self: center;
+            grid-column: 1/-1;
+        }
+        .name_and_intro {
+            grid-row: 1/-1;
+            font-weight: 700;
+            font-style: italic;
+            width: 80vw;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            justify-self: center;
+            align-self: center;
+        }
+        .name {
+            font-size: calc(48px + (58 - 48) * ((100vw - 1000px)/ (1600 - 1000)));
+            font-weight: 700;
+        }
+        .intro {
+            font-size:  calc(27px + (36 - 27) * ((100vw - 1000px)/ (1600 - 1000)));
+        }
+        .main_navigation {
+            font-size: calc(26px + (32 - 26) * ((100vw - 1000px)/ (1600 - 1000)));
+            grid-column: 1/-1;
+            grid-row: 1/4;
+            font-weight: 600;
+            display: grid;
+            justify-self: center;
+            grid-auto-flow: column;
+            gap: 20px;
+            z-index: 1;
+        }
+        .description {
+            font-size:  calc(21px + (27 - 21) * ((100vw - 1000px)/ (1600 - 1000)));
+            grid-row: 1/-1;
+            text-align: center;
+            align-self: end;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: rgba(0,0,0,.9);
+            position: relative;
+            top: -10vh;
+        }
+        .description::before {
+            content:"";
+            background: radial-gradient(circle at 0 0,transparent 30px,rgba(0,0,0,.9) 30px),radial-gradient(circle at 100% 0,transparent 30px,rgba(0,0,0,.9) 30px);
+            background-repeat: no-repeat;
+            // .01% to prevent ocational display glitch
+            background-size: 50.01% 100%;
+            background-position: top left,top right;
+            height: 30px;
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            top: -30px;
+           // background-color: pink;
+        }
+        .description::after {
+            content: "";
+            width: 100%;
+            background: radial-gradient(circle at 0 100%,transparent 30px,rgba(0,0,0,.9) 30px),radial-gradient(circle at 100% 101%,transparent 30px,rgba(0,0,0,.9) 30px);
+            height: 30px;
+            background-position: bottom left, bottom right;
+            background-repeat: no-repeat;
+            width: 100%;
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            // .01% to prevent ocational display glitch
+            background-size: 50.01% 100%;
+        }
+        nav.social_media {
+            grid-auto-flow: column !important;
+            grid-row: 1;
+            grid-column: 1/-1;
+            justify-self: flex-end;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(6,28px);
+            grid-template-columns: 28px;
+            margin-top: 7vh;
+            padding-right: 2vw;
+            z-index: 1;
+            filter: grayscale(1) brightness(1.18);
+        }
+    }
+    @media screen and (max-width: 450px) {
         
     }
 }
