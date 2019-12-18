@@ -44,6 +44,16 @@
             include(dirname(__FILE__).'/assets/js/header_menu_bar.js');
             ?>       
         </script>
+        
+        <script>
+            <?php 
+                include(dirname(__FILE__).'/assets/js/houdini_index.js');
+            ?>       
+        </script>
+
+
+
+
     </head>
 <body>
 <?php 

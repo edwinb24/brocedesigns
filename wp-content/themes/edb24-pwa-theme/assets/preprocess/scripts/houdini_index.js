@@ -14,4 +14,28 @@ if('registerProperty' in CSS) {
         inherits: false,
         initialValue: '#ad8e5f'
     })
+    CSS.registerProperty({
+        name: "--onhover_logo_gradient1",
+        syntax: '<color>',
+        inherits: false,
+        initialValue: '#efefef'
+    })    
+    CSS.registerProperty({
+        name: "--onhover_logo_gradient2",
+        syntax: '<color>',
+        inherits: false,
+        initialValue: '#efefef'
+    })    
+    CSS.registerProperty({
+        name: "--onhover_logo_gradient3",
+        syntax: '<color>',
+        inherits: false,
+        initialValue: '#efefef'
+    })    
+    CSS.registerProperty({
+        name: "--onhover_logo_gradient4",
+        syntax: '<color>',
+        inherits: false,
+        initialValue: '#efefef'
+    })    
 }

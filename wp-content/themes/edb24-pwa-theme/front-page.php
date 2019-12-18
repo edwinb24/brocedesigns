@@ -1,9 +1,4 @@
 <?php get_header(); ?>
-<script>
-	<?php 
-		include(dirname(__FILE__).'/assets/js/houdini_index.js');
-	?>       
-</script>
 <div class="home_page_wrapper">
 	<nav class="social_media" aria-label="Social Media Navigation">
 		<a href="https://www.facebook.com/edwin.b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-facebook-f-50_f5jaI8SnuZ.png" alt="Go to My Facebook"></a>
