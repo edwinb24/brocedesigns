@@ -1,10 +1,32 @@
 @import "../../_fonts";
 @import "../../_variables";
 
-// html, body, button {
-    //font-family: $theme_font_family;
-    //color: $main_font_color;
-// }
-// body {
-    //background-color: $main_background_color;
-// }
+.main-header {
+    display: flex;
+    background: aliceblue;
+    padding: 15px;
+    place-content: space-between;
+    position: sticky;
+}
+.logo {
+    color: #efefef;
+    font-family: 'Painthing With Chocolate'; 
+    font-size: calc(26px + (30 - 26) * ((100vw - 300px)/ (1600 - 1000)));
+    font-weight: normal;
+}
+#menu-main-menu {
+    display: flex;
+}
+.header_navigation {
+    display: flex;
+    width: 40vw;
+    place-content: space-between;
+}
+nav.social_media {
+    background-color: aqua;
+    display: flex;
+}
+nav.social_media img {
+    width: auto;
+    height: 28px;
+}

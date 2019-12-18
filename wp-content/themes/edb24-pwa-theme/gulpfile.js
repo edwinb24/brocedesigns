@@ -2,13 +2,19 @@ let gulp = require("gulp")
 let sass = require('gulp-sass')
 let babel = require('gulp-babel')
 let uglify = require('gulp-uglify-es').default
+let autoprefixer = require('gulp-autoprefixer')
 let cleanCSS = require('gulp-clean-css');
 let browserSync = require('browser-sync').create()
 
 //Compile SCSS into CSS
 function style() {
-    return gulp.src('./assets/preprocess/sass/**/*.scss')
+    return gulp.src(
+        [
+            '!./assets/preprocess/sass/**/home.scss', 
+            './assets/preprocess/sass/**/*.scss'
+          ])
         .pipe(sass({outputStyle: "compressed"}).on("error", sass.logError))
+        .pipe(autoprefixer({grid : "autoplace"}))
         .pipe(cleanCSS())
         .pipe(gulp.dest('./assets/css'))
         .pipe(browserSync.stream())

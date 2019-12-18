@@ -1,3 +1,6 @@
+@import "../../_fonts";
+@import "../../_variables";
+
 $cut_corner: 10;
 :root {
     --hover-color1: #bc6b6b;
@@ -60,7 +63,7 @@ a:focus {
         display: block;
     }
     .intro, .description {
-        font-family: Montserrat;
+        font-family: 'Montserrat'; 
     }
     nav.social_media {
         display: grid;
@@ -71,7 +74,6 @@ a:focus {
         height: 30px;
         align-self: start;
         margin-top: 10px;
-        margin-right: 20px;
     }
     .main_navigation div {
         align-self: center;
@@ -110,6 +112,7 @@ a:focus {
         nav.social_media {
             grid-column: 9/11;
             justify-self: end;
+            margin-right: 20px;
         }
         .social_media img{
             filter: contrast(1.4) drop-shadow(7px 8px 3px rgba(0, 0, 0,.3));
@@ -332,7 +335,7 @@ a:focus {
             color: #fefefe;
             grid-template-rows: repeat(auto-fit,minmax(70px,1fr));
             grid-template-columns: repeat(auto-fit,minmax(70px,1fr));
-            font-family: Montserrat;
+            font-family: 'Montserrat'; 
         }
         .home_page_wrapper:before {
             content: "";
@@ -429,11 +432,95 @@ a:focus {
             margin-top: 7vh;
             padding-right: 2vw;
             z-index: 1;
+            margin-right: 20px;
             filter: grayscale(1) brightness(1.18);
         }
     }
     @media screen and (max-width: 450px) {
-        
+        .home_page_wrapper {
+            grid-template-rows: repeat(10,1fr);
+            grid-template-columns: repeat(10,1fr);
+            color: #efefef;
+        }
+        .home_picture:before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,.3);
+        }
+        .home_picture {
+            grid-column: 1/-1;
+            grid-row: 1/-1;
+            position: relative;
+            z-index: -1;
+            background-image: url("https://ik.imagekit.io/edwinb24/main_image_dallas_style_-p3YCBEle.jpg");
+            background-position: center top;
+        }
+
+        .name_and_intro {
+            width: 70vw;
+            margin-left: 15vw;
+            margin-right: 15vw;
+            justify-self: center;
+            grid-column: 1/-1;
+        }
+        .name_and_intro {
+            grid-row: 1/-1;
+            font-style: italic;
+            width: 80vw;
+            margin-left: 10vw;
+            margin-right: 10vw;
+            justify-self: center;
+            align-self: center;
+        }
+        .name {
+            font-family: 'Painthing With Chocolate'; 
+            font-size: calc(42px + (64 - 42) * ((100vw - 300px)/ (500 - 300)));
+            font-weight: normal;
+        }
+        .intro {
+            font-size:  calc(27px + (36 - 27) * ((100vw - 1000px)/ (1600 - 1000)));
+        }
+        .main_navigation {
+            font-family: 'Montserrat';
+            font-size: calc(26px + (32 - 26) * ((100vw - 1000px)/ (1600 - 1000)));
+            grid-column: 1/-1;
+            grid-row: 1/4;
+            font-weight: 600;
+            display: grid;
+            justify-self: center;
+            grid-auto-flow: column;
+            gap: 20px;
+            z-index: 1;
+        }
+        .description {
+            justify-self: center;
+            grid-column: 1/-1;
+            font-size:  calc(21px + (27 - 21) * ((100vw - 1000px)/ (1600 - 1000)));
+            background-color: rgba(0,0,0,.7);
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            grid-row: 8;
+            text-align: center;
+            align-self: end;
+            top: -10vh;
+        }
+
+        nav.social_media {
+            grid-auto-flow: column !important;
+            grid-row: 1/-1;
+            grid-column: 1/-1;
+            justify-self: center;
+            align-self: flex-end;
+            z-index: 1;
+            grid-template-columns: repeat(6,35px);
+            grid-template-rows: 36px;
+            margin-bottom: 3vh;
+            filter: grayscale(1) brightness(1.18);
+        }
     }
 }
   @supports not (display: grid) {
