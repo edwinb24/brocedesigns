@@ -26,6 +26,7 @@
                 }
                 else {
                     include(dirname(__FILE__).'/assets/css/critical.css');
+                    include(dirname(__FILE__).'/assets/css/3d_styles.css');
                 }
             ?>
         </style>
@@ -36,12 +37,15 @@
                     include(dirname(__FILE__).'/assets/css/lazy_header.css');
                     include(dirname(__FILE__).'/assets/css/lazy_content.css');
                     include(dirname(__FILE__).'/assets/css/lazy_footer.css');
-                }
-            ?>
+                } 
+                ?>
         </style>
         <script>
             <?php 
             include(dirname(__FILE__).'/assets/js/header_menu_bar.js');
+            if(!is_front_page()) {
+                include(dirname(__FILE__).'/assets/js/3d_scrolling.js');           
+            }
             ?>       
         </script>
         
@@ -63,15 +67,26 @@
     <div class="main-header">
         <div class="logo">Edwin Broce</div>
         <div class="header_navigation">
-            <?php wp_nav_menu(array('theme_location'=>'header_menu')); ?>
-            <nav class="social_media">
-                <a href="https://www.facebook.com/edwin.b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-facebook-f-50_f5jaI8SnuZ.png" alt="Facebook Account"></a>
-                <a href="https://github.com/edwinb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-github-50_2tvaKuTdI.png" alt="GitHub Account"></a>
-                <a href="https://www.instagram.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-instagram-50_G9KosLytl.png" alt="Instagram Account"></a>
-                <a href="https://www.linkedin.com/in/edwin-broce/" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-linkedin-50_TMqTNg4N8w.png" alt="LinkedIn Account"></a>
-                <a href="https://www.twitch.tv/edb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitch-50_WkLgdNVD3k.png" alt="Twitch Account"></a>
-                <a href="https://twitter.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Twitter Account"></a>
-            </nav>
+        <input type="checkbox" id="toggle-main-menu"/>
+        <label class="menu-on" for="toggle-main-menu" onclick="toogleHamburgerIcon()">
+            <div class="hamburger-icon">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div> 
+        </label>
+        <label class="menu-off" for="toggle-main-menu" onclick="toogleHamburgerIcon()"></label>
+            <div class="header_menu">    
+                <?php wp_nav_menu(array('theme_location'=>'header_menu')); ?>
+                <nav class="social_media">
+                    <a href="https://www.facebook.com/edwin.b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-facebook-f-50_f5jaI8SnuZ.png" alt="Facebook Account"></a>
+                    <a href="https://github.com/edwinb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-github-50_2tvaKuTdI.png" alt="GitHub Account"></a>
+                    <a href="https://www.instagram.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-instagram-50_G9KosLytl.png" alt="Instagram Account"></a>
+                    <a href="https://www.linkedin.com/in/edwin-broce/" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-linkedin-50_TMqTNg4N8w.png" alt="LinkedIn Account"></a>
+                    <a href="https://www.twitch.tv/edb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitch-50_WkLgdNVD3k.png" alt="Twitch Account"></a>
+                    <a href="https://twitter.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Twitter Account"></a>
+                </nav>
+            </div>
         </div>
     </div>
 </div>

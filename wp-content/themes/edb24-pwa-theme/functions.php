@@ -43,18 +43,17 @@ function job_custom_post_type(){
 		'rewrite' => true,
 		'capability_type' => 'post',
 		'hierarchical' => false,
+		'taxonomies' => array('category', 'post_tag'),
+		'menu_position' => 5,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
 		'supports' => array(
 			'title',
 			'editor',
 			'excerpt',
 			'thumbnail',
 			'revision'
-		),
-		'taxonomies' => array('category', 'post_tag'),
-		'menu_position' => 5,
-		'exclude_from_search' => false,
-		'show_in_rest' => true,
-		'supports' => array('editor')
+		)
 	);
 	register_post_type('jobs', $args);
 }
