@@ -5,7 +5,7 @@
     --itemZ: 2; // Gap between each cards
     --cameraSpeed: 150; // Where 1 is the fastest, this var is a multiplying factor of --scenePerspective and --filmZ
     --cameraZ: 0; // Initial camera position
-    --viewportHeight: 0; // Viewport height will allow us to set the depth of our scene
+    --viewportHeight: 0; //Simulate Camera Getting Closer
   }
 
   
@@ -59,7 +59,7 @@
     right: 0;
 }
 
-@for $i from 0 through 25 {
+@for $i from 0 through 15 {
     .jobs:nth-child(#{$i}) {
       transform: translate3D(
         random(50) - 25 * 1%,
