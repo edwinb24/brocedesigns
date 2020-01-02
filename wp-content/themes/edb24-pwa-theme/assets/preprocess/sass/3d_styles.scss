@@ -3,13 +3,18 @@
     --scenePerspectiveOriginX: 50;
     --scenePerspectiveOriginY: 30;
     --itemZ: 2; // Gap between each cards
-    --cameraSpeed: 150; // Where 1 is the fastest, this var is a multiplying factor of --scenePerspective and --filmZ
-    --cameraZ: 0; // Initial camera position
+    --cameraSpeed: 900; // Where 1 is the fastest, this var is a multiplying factor of --scenePerspective and --filmZ
+    --cameraZ: 1700; // Initial camera position
     --viewportHeight: 0; //Simulate Camera Getting Closer
-  }
+}
 
+.main-header {
+    position: fixed;
+    z-index: 100;
+    width: 90vw;
+}
   
-.viewport {
+.scene_3d_wrapper {
     height: calc(var(--viewportHeight) * 1px);
 }
 
@@ -21,18 +26,30 @@
     height: 100%;
     perspective: calc(var(--scenePerspective) * var(--cameraSpeed) * 1px);
     perspective-origin: calc(var(--scenePerspectiveOriginX) * 1%) calc(var(--scenePerspectiveOriginY) * 1%);
-      will-change: perspective-origin;  //Allows Hardware-Accelerated CSS, so transitions are smoother
-      transform: translate3d(0,0,0);
+    will-change: perspective-origin;  //Allows Hardware-Accelerated CSS, so transitions are smoother
+    transform: translate3d(0,0,0);
+    
+    // Stars Background
+    background-color:black;
+    background-image:
+        radial-gradient(rgb(245, 216, 216), rgba(245, 216, 216,.2) 2px, transparent 40px),
+        radial-gradient(rgb(214, 235, 255), rgba(214, 235, 255,.15) 1px, transparent 30px),
+        radial-gradient(rgb(207, 255, 219), rgba(207, 255, 219,.1) 2px, transparent 40px),
+        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 
+        550px 550px, 
+        350px 350px, 
+        250px 250px, 
+        150px 150px;
+    background-position: 
+        0 0, 
+        40px 60px, 
+        130px 270px, 
+        70px 100px;
 }
 
-.main-header {
-    position: fixed;
-    z-index: 100;
-    width: 90vw;
-}
 
 .job_list_page {
-    perspective: 400px;
     position: absolute;
     top: 0;
     height: 100vh;
@@ -44,30 +61,31 @@
 .job_list_page .jobs {
     transform-style: preserve-3d;
     position: absolute;
-    width: 100%;
-    top: 40%;
+    width: 70%;
+    top: 30%;
     border-radius: 10px;
     padding: 15px;
     color: #222222;
 }
 
+
+@for $i from 1 through 10 {
+    .jobs:nth-child(#{$i}) {
+        transform: translate3D(
+            random(50) - 25 * 1%,
+            random(100) - 50* 1%,
+            calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
+            );
+        }
+    }
+
 .jobs:nth-child(2n) {
-    left: 0;
+    left: 10vw;
 }
 
 .jobs:nth-child(2n + 1) {
-    right: 0;
+    right: 10vw;
 }
-
-@for $i from 0 through 15 {
-    .jobs:nth-child(#{$i}) {
-      transform: translate3D(
-        random(50) - 25 * 1%,
-        random(100) - 50 * 1%,
-        calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
-      );
-    }
-  }
 
 .job_list_page .jobs:nth-child(1) {
     background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
@@ -78,6 +96,11 @@
 
 @media only screen and (min-width: 600px) {
     .job_list_page .jobs {
-    width: 45%;
-  }
+        width: 45%;
+    }
+}
+@media only screen and (min-width: 2000px) {
+    .job_list_page .jobs {
+        width: 25%;
+    }
 }

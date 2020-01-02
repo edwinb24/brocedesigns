@@ -9,7 +9,7 @@
 		<a href="https://twitter.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Go to My Twitter"></a>
 	</nav>
 	<nav class="main_navigation"  aria-label="Main Navigation">
-		<div role="button"><a href="#">About</a></div>
+		<div role="button"><a href="/brocedesigns/jobs">About</a></div>
 		<div role="button"><a href="#">The Lab</a></div>
 		<div role="button"><a href="#">Stream</a></div>
 	</nav>

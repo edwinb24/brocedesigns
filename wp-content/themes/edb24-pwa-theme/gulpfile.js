@@ -34,6 +34,7 @@ function watch() {
     browserSync.init({
         proxy: "http://local.brocedesigns.com/",
         browser: "chrome.exe",
+        open: 'external',
         files: [
             {
                 match: ['./assets/css/**/*.css'],
