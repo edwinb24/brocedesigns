@@ -8,7 +8,8 @@ const INITIAL_CAMERA_POSITION = parseFloat(getComputedStyle(document.documentEle
 const PERSPECTIVE_ORIGIN = {
                                                             x: parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--scenePerspectiveOriginX")),
                                                             y: parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--scenePerspectiveOriginY")),
-                                                            max_gap: 10
+                                                            max_gap_desktop: 10,
+                                                            max_gap_mobile: 20
                                                         }
                                                         
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,34 +20,36 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function MouseCameraMovement(e){
+    console.log(`Mouse Testing`)
     let x_gap = 
     (((e.clientX - window.innerWidth / 2) * 100) / (window.innerWidth / 2)) * -1
     let y_gap = 
     (((e.clientY - window.innerHeight / 2) * 100) / (window.innerHeight / 2)) * -1
-    moveCameraAngle(x_gap, y_gap)
+    moveCameraAngle(x_gap, y_gap, PERSPECTIVE_ORIGIN.max_gap_desktop)
 }
 function GyroCameraMovement(e){
-    console.log(`test`)
-    console.log(`Event Alpha => ${e.alpha}`)
+    console.log(`Gyro Testing`)
     console.log(`Event beta => ${e.beta}`)
     console.log(`Event gamma => ${e.gamma}`)
     // let x_gap = 
-    // (((e.clientX - window.innerWidth / 2) * 100) / (window.innerWidth / 2)) * -1
+    // (((e.gamma) * 100) / (window.innerWidth / 2)) * -1
     // let y_gap = 
-    // (((e.clientY - window.innerHeight / 2) * 100) / (window.innerHeight / 2)) * -1
-    // moveCameraAngle(x_gap, y_gap)
+    // (((e.beta - window.innerHeight / 2) * 100) / (window.innerHeight / 2)) * -1
+    moveCameraAngle(e.gamma, e.beta, PERSPECTIVE_ORIGIN.max_gap_mobile)
 }
 
 
-function moveCameraAngle (x_gap, y_gap) {
+function moveCameraAngle (x_gap, y_gap, max_gap) {
     
     let new_perspective_x = 
-        PERSPECTIVE_ORIGIN.x + (x_gap * PERSPECTIVE_ORIGIN.max_gap) / 100
+        PERSPECTIVE_ORIGIN.x + (x_gap * max_gap) / 100
     let new_perspective_y = 
-        PERSPECTIVE_ORIGIN.y + (y_gap * PERSPECTIVE_ORIGIN.max_gap) / 100
+        PERSPECTIVE_ORIGIN.y + (y_gap * max_gap) / 100
     
     document.documentElement.style.setProperty("--scenePerspectiveOriginX", new_perspective_x)
     document.documentElement.style.setProperty("--scenePerspectiveOriginY", new_perspective_y)
+    console.log(`new_perspective_x ${new_perspective_x}`)
+    console.log(`new_perspective_y ${new_perspective_y}`)
 }
 
 function setSceneHeight () {
