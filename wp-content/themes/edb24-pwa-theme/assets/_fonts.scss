@@ -55,6 +55,24 @@
     font-weight: normal;
     font-style: normal;
 }
+
+//Orbitron Font Face
+@font-face {
+    font-family: 'Orbitron';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/orbitron-bold-webfont_y1ctpTN0E.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/orbitron-bold-webfont_C0mDrdfe1.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('https://ik.imagekit.io/edwinb24/fonts/orbitron-black-webfont_xyREzX9PyL.woff2') format('woff2'),
+        url('https://ik.imagekit.io/edwinb24/fonts/orbitron-black-webfont_DnLHCcr6k.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
 //Caviar Dream Font Face
 @media screen and (max-width: 1250px) and (min-width: 700px){
     @font-face {
@@ -88,4 +106,3 @@
         font-style: italic;
     }
 }
-

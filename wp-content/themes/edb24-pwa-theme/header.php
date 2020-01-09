@@ -65,7 +65,7 @@
 ?>
 <div class="header-wrapper">
     <div class="main-header">
-        <div class="logo">Edwin Broce</div>
+        <div class="logo"><a href="/">Edwin Broce</a></div>
         <div class="header_navigation">
         <input type="checkbox" id="toggle-main-menu"/>
         <label class="menu-on" for="toggle-main-menu" onclick="toogleHamburgerIcon()">

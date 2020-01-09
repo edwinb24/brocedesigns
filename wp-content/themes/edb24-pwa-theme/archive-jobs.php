@@ -1,6 +1,9 @@
 <div class="viewport">
 <?php get_header(); ?>
 <span class="separating_line"></span>
+<div class="scrolling_icon">
+	<div class="scrolling_icon_arrow">↓</div>
+</div>
 <div class="scene_3d_wrapper">
 <div class="scene_3d_container">
 <div class="main_content_wrapper job_list_page">

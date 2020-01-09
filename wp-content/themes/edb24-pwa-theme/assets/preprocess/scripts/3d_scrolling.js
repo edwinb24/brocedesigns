@@ -28,19 +28,11 @@ function MouseCameraMovement(e){
     moveCameraAngle(x_gap, y_gap, PERSPECTIVE_ORIGIN.max_gap_desktop)
 }
 function GyroCameraMovement(e){
-    console.log(`Gyro Testing`)
-    console.log(`Event beta => ${e.beta}`)
-    console.log(`Event gamma => ${e.gamma}`)
-    // let x_gap = 
-    // (((e.gamma) * 100) / (window.innerWidth / 2)) * -1
-    // let y_gap = 
-    // (((e.beta - window.innerHeight / 2) * 100) / (window.innerHeight / 2)) * -1
     moveCameraAngle(e.gamma, e.beta, PERSPECTIVE_ORIGIN.max_gap_mobile)
 }
 
 
 function moveCameraAngle (x_gap, y_gap, max_gap) {
-    
     let new_perspective_x = 
         PERSPECTIVE_ORIGIN.x + (x_gap * max_gap) / 100
     let new_perspective_y = 
@@ -48,26 +40,21 @@ function moveCameraAngle (x_gap, y_gap, max_gap) {
     
     document.documentElement.style.setProperty("--scenePerspectiveOriginX", new_perspective_x)
     document.documentElement.style.setProperty("--scenePerspectiveOriginY", new_perspective_y)
-    console.log(`new_perspective_x ${new_perspective_x}`)
-    console.log(`new_perspective_y ${new_perspective_y}`)
 }
 
 function setSceneHeight () {
     let list_of_items = document.getElementsByClassName("jobs")
     let number_of_items = list_of_items.length
-    console.log(`Im working1 ${number_of_items}`)
     let item_z_index = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--itemZ"))
     let perspective = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--scenePerspective"))
     let camera_speed = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--cameraSpeed"))
-    let height = window.innerHeight + perspective * camera_speed + item_z_index * camera_speed * number_of_items
+    let height = (window.innerHeight + perspective * camera_speed + item_z_index * camera_speed * (number_of_items -1)) + 300
     document.documentElement.style.setProperty("--viewportHeight", height)
 }
 
 // moveCamera simulate the movement of the camera by converting the user 
 //scrolling onto movement on a 3D space
 
-
 function moveCamera() {
     document.documentElement.style.setProperty("--cameraZ", window.pageYOffset + INITIAL_CAMERA_POSITION)
-    console.log("Im working3")
 }
