@@ -67,7 +67,7 @@
     <div class="main-header">
         <div class="logo"><a href="/">Edwin Broce</a></div>
         <div class="header_navigation">
-        <input type="checkbox" id="toggle-main-menu"/>
+        <input type="checkbox" id="toggle-main-menu" role="button" aria-label="Toggle Menu"/>
         <label class="menu-on" for="toggle-main-menu" onclick="toogleHamburgerIcon()">
             <div class="hamburger-icon">
                 <div class="bar1"></div>
@@ -76,15 +76,17 @@
             </div> 
         </label>
         <label class="menu-off" for="toggle-main-menu" onclick="toogleHamburgerIcon()"></label>
-            <div class="header_menu">    
+            <div class="header_menu">
+                <nav aria-label="Main Navigation" class="menu_main_menu_wrapper">
                 <?php wp_nav_menu(array('theme_location'=>'header_menu')); ?>
-                <nav class="social_media">
-                    <a href="https://www.facebook.com/edwin.b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-facebook-f-50_f5jaI8SnuZ.png" alt="Facebook Account"></a>
-                    <a href="https://github.com/edwinb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-github-50_2tvaKuTdI.png" alt="GitHub Account"></a>
-                    <a href="https://www.instagram.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-instagram-50_G9KosLytl.png" alt="Instagram Account"></a>
-                    <a href="https://www.linkedin.com/in/edwin-broce/" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-linkedin-50_TMqTNg4N8w.png" alt="LinkedIn Account"></a>
-                    <a href="https://www.twitch.tv/edb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitch-50_WkLgdNVD3k.png" alt="Twitch Account"></a>
-                    <a href="https://twitter.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Twitter Account"></a>
+                </nav>
+                <nav class="social_media" aria-label="Social Media Navigation">
+                    <a href="https://www.facebook.com/edwin.b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-facebook-f-50_f5jaI8SnuZ.png" alt="Go to My Facebook"></a>
+                    <a href="https://github.com/edwinb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-github-50_2tvaKuTdI.png" alt="Go to My GitHub"></a>
+                    <a href="https://www.instagram.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-instagram-50_G9KosLytl.png" alt="Go to My Instagram"></a>
+                    <a href="https://www.linkedin.com/in/edwin-broce/" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-linkedin-50_TMqTNg4N8w.png" alt="Go to My LinkedIn"></a>
+                    <a href="https://www.twitch.tv/edb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitch-50_WkLgdNVD3k.png" alt="Go to My Twitch"></a>
+                    <a href="https://twitter.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Go to My Twitter"></a>
                 </nav>
             </div>
         </div>

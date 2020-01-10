@@ -23,6 +23,15 @@ body {
 .logo:hover {
     color: #ffd27d;
 }
+a:focus {
+    border: 3px solid #ff9244;
+    border-radius: 5px;
+    outline: none;
+}
+.logo a:focus {
+    border-color: #d5d5d5;
+}
+
 @supports (background-image: paint(custom_corner)) {
     .logo {
         background: linear-gradient(to right, var(--onhover_logo_gradient1) 0%,var(--onhover_logo_gradient2) 33%,var(--onhover_logo_gradient3) 66%,var(--onhover_logo_gradient4) 100%);
@@ -53,7 +62,7 @@ body {
     justify-self: end;
     grid-template-areas: "main_menu social_media_menu";
 }
-.menu-main-menu-container {
+.menu_main_menu_wrapper {
     display: flex;
     align-items: center;
     margin-right: 25px;
@@ -69,6 +78,7 @@ body {
     position: relative;
     color: #ffd27d;
     filter: grayscale(100%);
+    transition: filter 1.2s;
 }
 #menu-main-menu li:before, #menu-main-menu li:after {
     content: "";
