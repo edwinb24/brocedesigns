@@ -10,7 +10,7 @@ Currently in development. Items pending for Ver.1.0:
 * Service Worker
 
 Home page contain 4 different designs, feel free to play around with the page width 😉
-Home page inspire by Lynn Fisher amazing 2017 webpage: https://lynnandtonic.com/archive/2017/
+Home page inspire by Lynn Fisher's amazing 2017 webpage: https://lynnandtonic.com/archive/2017/
 
 Jobs page (called "About" page for now) inspire by Vincent Humeau's tutorial: https://dev.to/vinceumo/css-3d---scrolling-on-the-z-axis-45i9 .
 
