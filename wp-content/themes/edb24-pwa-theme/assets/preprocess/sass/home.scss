@@ -126,7 +126,7 @@ a:focus {
             grid-column: 7/10;
             grid-row: 7/8;
             display: grid;
-            grid-template-columns: repeat(3,160px);
+            grid-template-columns: repeat(3,170px);
             text-align: center;
             justify-content: center;
             font-size: calc(16px + (18 - 16) * ((100vw - 1000px)/ (1600 - 1000)));
@@ -529,3 +529,9 @@ a:focus {
       float: right;
     }
   }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body {
+        background-color: aqua;
+    }
+}

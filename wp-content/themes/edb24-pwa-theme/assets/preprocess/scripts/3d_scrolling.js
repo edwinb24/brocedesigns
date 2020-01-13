@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function MouseCameraMovement(e){
-    console.log(`Mouse Testing`)
     let x_gap = 
     (((e.clientX - window.innerWidth / 2) * 100) / (window.innerWidth / 2)) * -1
     let y_gap = 

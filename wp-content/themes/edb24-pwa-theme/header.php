@@ -85,7 +85,7 @@
                     <a href="https://github.com/edwinb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-github-50_2tvaKuTdI.png" alt="Go to My GitHub"></a>
                     <a href="https://www.instagram.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-instagram-50_G9KosLytl.png" alt="Go to My Instagram"></a>
                     <a href="https://www.linkedin.com/in/edwin-broce/" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-linkedin-50_TMqTNg4N8w.png" alt="Go to My LinkedIn"></a>
-                    <a href="https://www.twitch.tv/edb24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitch-50_WkLgdNVD3k.png" alt="Go to My Twitch"></a>
+                    <a href="https://www.youtube.com/channel/UC751iWBodxoX3rYUleWRaHA" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-play-button-50_e4sHdo05n.png" alt="Go to My Youtube"></a>
                     <a href="https://twitter.com/edwin_b24" target="_blank"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Go to My Twitter"></a>
                 </nav>
             </div>
