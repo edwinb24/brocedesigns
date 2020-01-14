@@ -41,10 +41,6 @@ a:focus {
     outline: none;
 }
 
-.home_picture {
-    order: 1;
-    background-image: url("https://ik.imagekit.io/edwinb24/main_photo_Tfbks8fvM.jpg");
-}
 
 @supports (display: grid) {
     .home_page_wrapper {
@@ -59,7 +55,9 @@ a:focus {
         order: 1;
         background-position: right center;
         background-size: cover;
+        background-image: url("https://ik.imagekit.io/edwinb24/main_photo_Tfbks8fvM.jpg");
     }
+    
     .name_and_intro {
         margin-bottom: 10px;
         margin-top: 10px;
@@ -531,22 +529,26 @@ a:focus {
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .home_page_wrapper {
+        font-family: 'Montserrat';
+        background: linear-gradient(to bottom, #1e4470 0%,#2971ac 52%,#1e619c 52%,#8da1b1 100%);
+        color: #efefef;
         display: flex;
+        position: fixed;
+        width: 100%;
+        height: 100%;
         flex-flow: column;
         margin: auto;
         justify-content: center;
         align-items: center;
-        padding-top: 100px;
-        padding-bottom: 100px;
-        padding-left: 5%;
-        padding-right: 5%;
     }
     
     .home_picture {
         width: 200px;
         height: 200px;
         border-radius: 200px;
-        background-position: right center;
+        background-image: url("https://ik.imagekit.io/edwinb24/ie_homepage_photo_6__J5XyoZ.jpg");
+        background-position: center center;
+        background-size: contain;
         order: 1;
     }
 
@@ -559,7 +561,7 @@ a:focus {
 
     .description {
         order: 3;
-        max-width: 700px;
+        max-width: 720px;
         text-align: center;
 
     }
@@ -574,6 +576,17 @@ a:focus {
     .main_navigation div {
         margin-right: 20px;
         margin-left: 20px;
+        font-weight: 800;
+        border-bottom: 3px solid #efefef;
+        transition: transform .3s;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .main_navigation div:hover {
+        color: #fff;
+        border-color: #fff;
+        transform: scale(1.1, 1.1);
     }
 
     .social_media {
@@ -583,5 +596,9 @@ a:focus {
     .social_media img {
         width: 30px;
         height: 30px;
+        transition: transform .3s;
+    }
+    .social_media img:hover {
+        transform: scale(1.1, 1.1);
     }
 }
