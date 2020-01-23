@@ -10,12 +10,14 @@ const PERSPECTIVE_ORIGIN = {
                                                             y: parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--scenePerspectiveOriginY")),
                                                             max_gap_desktop: 10,
                                                             max_gap_mobile: 20
-                                                        }
+                                                        }                                                
+const SCROLLING_OVERLAY = document.getElementsByClassName("scrolling_icon")
                                                         
 document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('deviceorientation', GyroCameraMovement)
     window.addEventListener("scroll", moveCamera)
     window.addEventListener("mousemove", MouseCameraMovement)
+    displayInstructions()
     setSceneHeight()
 })
 
@@ -50,10 +52,19 @@ function setSceneHeight () {
     let height = (window.innerHeight + perspective * camera_speed + item_z_index * camera_speed * (number_of_items -1)) + 300
     document.documentElement.style.setProperty("--viewportHeight", height)
 }
+function displayInstructions () {
+        if(sessionStorage.getItem('first_visit') === null) {
+            SCROLLING_OVERLAY[0].style.display = "flex"
+            sessionStorage.setItem('first_visit','no')
+        }
+    }
 
 // moveCamera simulate the movement of the camera by converting the user 
 //scrolling onto movement on a 3D space
-
 function moveCamera() {
+    if(window.pageYOffset > 0 && window.pageYOffset < 100){
+        SCROLLING_OVERLAY[0].style.top = "1000px"
+        SCROLLING_OVERLAY[0].style.opacity = "0"
+    }    
     document.documentElement.style.setProperty("--cameraZ", window.pageYOffset + INITIAL_CAMERA_POSITION)
 }
