@@ -18,7 +18,7 @@
 		<span class="name">Edwin Broce</span>
 		<span class="intro">Web Developer from Panama City, Panama</span>
 	</h1>
-	<div class="home_picture">
+	<div class="home_picture lazy_loaded">
 	</div>
 	<p class="description">
 		I am always looking for something new to learn and the opportunity to share my love for coding with others. I also love playing videogames, D&D, and teaching my cat to do tricks! 
