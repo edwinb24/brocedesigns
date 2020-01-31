@@ -43,7 +43,6 @@
         <script>
             <?php 
             include(dirname(__FILE__).'/assets/js/header_menu_bar.js');
-            include(dirname(__FILE__).'/assets/js/lazy_loading.js');
             if(!is_front_page()) {
                 include(dirname(__FILE__).'/assets/js/3d_scrolling.js');           
             }

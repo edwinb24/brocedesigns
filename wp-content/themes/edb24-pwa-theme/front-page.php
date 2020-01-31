@@ -18,9 +18,11 @@
 		<span class="name">Edwin Broce</span>
 		<span class="intro">Web Developer from Panama City, Panama</span>
 	</h1>
-	<div class="home_picture lazy_loaded">
+	<div class="home_picture lazy_loaded" style='background-image: url("https://ik.imagekit.io/edwinb24/wp-content/uploads/2020/01/home_page_photo_mobile.jpg?tr=w-20,h-20 ")'>
 	</div>
 	<p class="description">
 		I am always looking for something new to learn and the opportunity to share my love for coding with others. I also love playing videogames, D&D, and teaching my cat to do tricks! 
 	</p>
 </div>
+<?php get_footer(); ?>
+

@@ -8,4 +8,9 @@
 	</footer>
 	<?php wp_footer(); ?>
 	</body>
+	<script>
+            <?php 
+            include(dirname(__FILE__).'/assets/js/lazy_loading.js');
+            ?>       
+        </script>
 </html>

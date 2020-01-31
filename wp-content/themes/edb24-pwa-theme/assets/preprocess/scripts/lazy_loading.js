@@ -8,7 +8,11 @@ const observer_options = {
 
 function preloadImage(img){
     let src = img.style.backgroundImage
+    console.log("src")
     console.log(src)
+    src = src.replace("?tr=w-20,h-20", ""); 
+    console.log(src)
+    img.style.backgroundImage = src
 }
 
 const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -17,7 +21,6 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
             console.log(entry.target)
             preloadImage(entry.target)
             observer.unobserve(entry.target)
-            console.log("HELLOW")
         }
     });
 }, observer_options)
@@ -25,4 +28,5 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
 LAZY_IMAGES.forEach(image => {
     console.log("image");
     console.log(image);
+    imageObserver.observe(image)
 })
