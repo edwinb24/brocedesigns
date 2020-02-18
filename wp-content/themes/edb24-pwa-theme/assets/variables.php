@@ -1,8 +1,8 @@
 <?php 
     
 /* Brand Variables */
-    $logo_image = "https://ik.imagekit.io/edwinb24/default-image.jpg";
-    $brand_name = "Edwin Broce's Site";
+    $GLOBALS[ 'img_path'] = "https://ik.imagekit.io/edwinb24/wp-content/uploads/";
+    
 /*Main Banner */
 /* 
     NOTE: If this variables become too many this code needs to

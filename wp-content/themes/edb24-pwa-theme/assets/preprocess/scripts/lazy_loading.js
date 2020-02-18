@@ -11,7 +11,9 @@ function preloadImage(img){
     console.log("src")
     console.log(src)
     src = src.replace("?tr=w-20,h-20", ""); 
-    console.log(src)
+    if(window.innerWidth < 450 )
+        src = src.replace(".jpg", "_mobile.jpg"); 
+    console.log(window.innerWidth)
     img.style.backgroundImage = src
 }
 
