@@ -8,19 +8,15 @@ const observer_options = {
 
 function preloadImage(img){
     let src = img.style.backgroundImage
-    console.log("src")
-    console.log(src)
     src = src.replace("?tr=w-20,h-20", ""); 
     if(window.innerWidth < 450 )
         src = src.replace(".jpg", "_mobile.jpg"); 
-    console.log(window.innerWidth)
     img.style.backgroundImage = src
 }
 
 const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting){
-            console.log(entry.target)
             preloadImage(entry.target)
             observer.unobserve(entry.target)
         }
@@ -28,7 +24,5 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
 }, observer_options)
 
 LAZY_IMAGES.forEach(image => {
-    console.log("image");
-    console.log(image);
     imageObserver.observe(image)
 })
