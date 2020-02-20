@@ -4,7 +4,7 @@ Currently in development. Items pending for Ver.1.0:
 
 * Accessibility testing ✔️ 
 * CSS Code Splitting
-* Image Lazy Loading
+* Image Lazy Loading✔️
 * IE friendly CSS✔️ 
 * Caching Headers
 * Service Worker
