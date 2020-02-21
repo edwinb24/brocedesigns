@@ -18,28 +18,26 @@
         ?>
     </style>
 
-<!-- Home Styles -->
+<!-- Critical Styles -->
         <style>
-            <?php 
-                if(is_front_page()) {
+            <?php if(is_front_page()) {
                     include(dirname(__FILE__).'/assets/css/home.css');
-                }
-                else {
+                } else {
                     include(dirname(__FILE__).'/assets/css/critical.css');
                     include(dirname(__FILE__).'/assets/css/3d_styles.css');
                 }
             ?>
         </style>
 <!-- Lazy Styles -->
-        <style>       
-            <?php 
-                if(!is_front_page()) {
-                    include(dirname(__FILE__).'/assets/css/lazy_header.css');
-                    include(dirname(__FILE__).'/assets/css/lazy_content.css');
-                    include(dirname(__FILE__).'/assets/css/lazy_footer.css');
-                } 
-                ?>
-        </style>
+        <noscript class="lazyload">
+            <?php if(is_front_page()) { ?>
+                <link rel="stylesheet" href="<?php echo dirname(__FILE__); ?>/assets/css/lazy_header.css">
+                <link rel="stylesheet" href="<?php echo dirname(__FILE__); ?>/assets/css/lazy_content.css">
+                <link rel="stylesheet" href="<?php echo dirname(__FILE__); ?>/assets/css/lazy_footer.css">
+            <?php   } else { ?>
+                <link rel="stylesheet" href="<?php echo dirname(__FILE__); ?>/assets/css/lazy_home.css">     
+            <?php } ?>
+        </noscrpt>
         <script>
             <?php 
             include(dirname(__FILE__).'/assets/js/header_menu_bar.js');

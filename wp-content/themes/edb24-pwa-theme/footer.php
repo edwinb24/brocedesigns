@@ -12,5 +12,14 @@
             <?php 
             include(dirname(__FILE__).'/assets/js/lazy_loading.js');
             ?>       
-        </script>
+    </script>
+	<!-- Lazy JS -->
+	<template class="lazyload">
+		<script>
+			<?php 
+				include(dirname(__FILE__).'/assets/js/houdini_index.js');
+			?>       
+		</script>
+	</template>
+
 </html>
