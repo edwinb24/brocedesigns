@@ -1,5 +1,4 @@
-const LAZY_IMAGES = document.querySelectorAll(".lazy_loaded")
-
+const LAZY_IMAGES = document.querySelectorAll(".lazy_loaded_image")
 const observer_options = {
     root: null,
     rootMargin: "0px 0px 300px 0px",

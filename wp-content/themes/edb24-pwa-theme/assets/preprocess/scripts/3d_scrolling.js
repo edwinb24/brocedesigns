@@ -5,14 +5,14 @@
 const INITIAL_CAMERA_POSITION = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--cameraZ"))
 
 //Get initial coordinates and stablish how much the camera will move
-const PERSPECTIVE_ORIGIN = {
-                                                            x: parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--scenePerspectiveOriginX")),
-                                                            y: parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--scenePerspectiveOriginY")),
-                                                            max_gap_desktop: 10,
-                                                            max_gap_mobile: 20
-                                                        }                                                
-const SCROLLING_OVERLAY = document.getElementsByClassName("scrolling_icon")
-                                                        
+const PERSPECTIVE_ORIGIN = 
+    {
+        x: parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--scenePerspectiveOriginX")),
+        y: parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--scenePerspectiveOriginY")),
+        max_gap_desktop: 10,
+        max_gap_mobile: 20
+    }               
+
 document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('deviceorientation', GyroCameraMovement)
     window.addEventListener("scroll", moveCamera)
@@ -54,7 +54,8 @@ function setSceneHeight () {
 }
 function displayInstructions () {
         if(sessionStorage.getItem('first_visit') === null) {
-            SCROLLING_OVERLAY[0].style.display = "flex"
+            let scrolling_overlay = document.getElementById("scrolling_icon")
+            scrolling_overlay.style.display = "flex"
             sessionStorage.setItem('first_visit','no')
         }
     }
@@ -62,9 +63,10 @@ function displayInstructions () {
 // moveCamera simulate the movement of the camera by converting the user 
 //scrolling onto movement on a 3D space
 function moveCamera() {
-    if(window.pageYOffset > 0 && window.pageYOffset < 100){
-        SCROLLING_OVERLAY[0].style.top = "1000px"
-        SCROLLING_OVERLAY[0].style.opacity = "0"
+    if(window.pageYOffset < 500){
+        let scrolling_overlay = document.getElementById("scrolling_icon")
+        scrolling_overlay.style.top = "1000px"
+        scrolling_overlay.style.opacity = "0"
     }    
     document.documentElement.style.setProperty("--cameraZ", window.pageYOffset + INITIAL_CAMERA_POSITION)
 }

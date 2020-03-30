@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="viewport">
 <span class="separating_line"></span>
-<div class="scrolling_icon">
+<div id="scrolling_icon">
 	<div class="scrolling_message_text"><span>Scroll</span> <span>to</span> <span>navigate</span></div>
 	<div class="scrolling_icon_arrow">↓</div>
 </div>

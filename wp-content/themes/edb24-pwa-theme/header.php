@@ -29,33 +29,26 @@
             ?>
         </style>
 <!-- Lazy Styles -->
-        <noscript class="lazyload">
-            <?php if(is_front_page()) { ?>
-                <link rel="stylesheet" href="<?php echo dirname(__FILE__); ?>/assets/css/lazy_header.css">
-                <link rel="stylesheet" href="<?php echo dirname(__FILE__); ?>/assets/css/lazy_content.css">
-                <link rel="stylesheet" href="<?php echo dirname(__FILE__); ?>/assets/css/lazy_footer.css">
-            <?php   } else { ?>
-                <link rel="stylesheet" href="<?php echo dirname(__FILE__); ?>/assets/css/lazy_home.css">     
-            <?php } ?>
-        </noscrpt>
+<noscript class="lazyload">
+    <?php if(is_front_page()) { ?>
+        <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_header.css">
+        <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_content.css">
+        <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_footer.css">
+    <?php   } else { ?>
+        <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_home.css">     
+    <?php } ?>
+</noscript>
+        
+<!-- Critical JS -->
         <script>
             <?php 
             include(dirname(__FILE__).'/assets/js/header_menu_bar.js');
+            include(dirname(__FILE__).'/assets/js/houdini_index.js');
             if(!is_front_page()) {
                 include(dirname(__FILE__).'/assets/js/3d_scrolling.js');           
             }
             ?>       
         </script>
-        
-        <script>
-            <?php 
-                include(dirname(__FILE__).'/assets/js/houdini_index.js');
-            ?>       
-        </script>
-
-
-
-
     </head>
 <body>
 <?php 
@@ -65,15 +58,15 @@
     <div class="main-header">
         <div class="logo"><a href="/">Edwin Broce</a></div>
         <div class="header_navigation">
-        <input type="checkbox" id="toggle-main-menu" role="button" aria-label="Toggle Menu"/>
-        <label class="menu-on" for="toggle-main-menu" onclick="toogleHamburgerIcon()">
-            <div class="hamburger-icon">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div> 
-        </label>
-        <label class="menu-off" for="toggle-main-menu" onclick="toogleHamburgerIcon()"></label>
+            <input type="checkbox" id="toggle-main-menu" role="button" aria-label="Toggle Menu"/>
+            <label class="menu-on" for="toggle-main-menu" onclick="toogleHamburgerIcon()">
+                <div class="hamburger-icon">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> 
+            </label>
+            <label class="menu-off" for="toggle-main-menu" onclick="toogleHamburgerIcon()"></label>
             <div class="header_menu">
                 <nav aria-label="Main Navigation" class="menu_main_menu_wrapper">
                 <?php wp_nav_menu(array('theme_location'=>'header_menu')); ?>
