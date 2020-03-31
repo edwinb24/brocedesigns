@@ -2,10 +2,16 @@
 @import "../../_variables";
 
 $cut_corner: 10;
+
 :root {
     --hover-color1: #bc6b6b;
     --hover-color2: #ad8e5f;
 }
+
+.description {
+    --description_custom_corner: 30px;
+}
+
 @function sqrt($num) {
     $x0: 1;
     $x1: $x0;
@@ -391,36 +397,45 @@ a:focus {
             grid-row: 1/-1;
             text-align: center;
             align-self: end;
-            padding-left: 30px;
-            padding-right: 30px;
+            padding-left: var(--description_custom_corner);
+            padding-right: var(--description_custom_corner);
             background-color: rgba(0,0,0,.9);
             position: relative;
             top: -10vh;
         }
         .description::before {
             content:"";
-            background: radial-gradient(circle at 0 0,transparent 30px,rgba(0,0,0,.9) 30px),radial-gradient(circle at 100% 0,transparent 30px,rgba(0,0,0,.9) 30px);
+            background: 
+                radial-gradient(circle at 0 0,transparent var(--description_custom_corner),
+                rgba(0,0,0,.9) var(--description_custom_corner)),
+                radial-gradient(circle at 100% 0,transparent var(--description_custom_corner),
+                rgba(0,0,0,.9) var(--description_custom_corner))
+            ;
             background-repeat: no-repeat;
             // .01% to prevent ocational display glitch
             background-size: 50.01% 100%;
             background-position: top left,top right;
-            height: 30px;
+            height: var(--description_custom_corner);
             width: 100%;
             position: absolute;
             left: 0px;
-            top: -30px;
-           // background-color: pink;
+            top: calc(-1 * var(--description_custom_corner));
         }
         .description::after {
             content: "";
             width: 100%;
-            background: radial-gradient(circle at 0 100%,transparent 30px,rgba(0,0,0,.9) 30px),radial-gradient(circle at 100% 101%,transparent 30px,rgba(0,0,0,.9) 30px);
-            height: 30px;
+            background: 
+                radial-gradient(circle at 0 100%,transparent var(--description_custom_corner),
+                rgba(0,0,0,.9) var(--description_custom_corner)),
+                radial-gradient(circle at 100% 101%,transparent var(--description_custom_corner),
+                rgba(0,0,0,.9) var(--description_custom_corner))
+            ;
+            height: var(--description_custom_corner);
             background-position: bottom left, bottom right;
             background-repeat: no-repeat;
             width: 100%;
             position: absolute;
-            bottom: -30px;
+            bottom: calc(-1 * var(--description_custom_corner));
             left: 0;
             // .01% to prevent ocational display glitch
             background-size: 50.01% 100%;
@@ -527,6 +542,28 @@ a:focus {
         }
     }
 }
+
+@media (orientation: landscape) and (max-width: 750px){
+    .home_picture {
+        background-position: center top;
+    }
+    .main_navigation {
+        grid-row: 1/2;
+        align-self: end;
+    }
+    .name_and_intro {
+        grid-row: 4/5;
+    }
+    .description {
+        --description_custom_corner: 15px;
+    }
+    nav.social_media {
+        grid-row: 1/-1;
+        margin-top: calc(6 * -28px);
+        align-self: center;
+    }
+}
+
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .home_page_wrapper {
