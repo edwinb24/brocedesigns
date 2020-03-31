@@ -20,7 +20,14 @@
     }
 }
 
-@supports (display: grid) {
+/*
+    Microsoft Edge Currently have some implementation issues
+    for CSS 3D Elements. This code will likely change when 
+    they correct the bugs. Here is a link with more about the
+    issues: https://css-tricks.com/things-watch-working-css-3d/
+*/
+
+@supports (display: grid) and (not (-ms-ime-align: auto)) {
     .main-header {
         position: fixed;
         z-index: 100;
@@ -148,8 +155,8 @@
                 random(100) - 50* 1%,
                 calc(var(--itemZ) * var(--cameraSpeed) * #{$i} * -1px)
                 );
-            }
         }
+    }
 
     .jobs:nth-child(2n) {
         left: 10vw;
@@ -230,7 +237,20 @@
     }
 }
 
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+@mixin notAsModernBrowsers() {
+    /* all IE versions <= 11 */
+    @media screen and (-ms-high-contrast: none) {
+        @content;
+    }
+
+    /* all edge versions */
+    @supports (-ms-ime-align:auto) {
+        @content;
+    }
+}
+
+@include notAsModernBrowsers {
     body {
         background-image:
             linear-gradient(to bottom, #1e4470 0%,#185281 100%);
@@ -259,8 +279,10 @@
         top: 0;
         position: fixed;
         width: 90%;
+        height: 90px;
         align-items: center;
         justify-content: space-between;
+        background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,.75) 66%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
     #menu-main-menu li, .logo {
         color: #efefef;
@@ -291,5 +313,8 @@
     }
     article {
         font-size: 18px;
+    }
+    #scrolling_icon {
+        display: none;
     }
 }

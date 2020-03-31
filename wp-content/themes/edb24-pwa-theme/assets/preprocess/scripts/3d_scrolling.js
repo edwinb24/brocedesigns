@@ -67,6 +67,6 @@ function moveCamera() {
         let scrolling_overlay = document.getElementById("scrolling_icon")
         scrolling_overlay.style.top = "1000px"
         scrolling_overlay.style.opacity = "0"
-    }    
+    }
     document.documentElement.style.setProperty("--cameraZ", window.pageYOffset + INITIAL_CAMERA_POSITION)
 }
