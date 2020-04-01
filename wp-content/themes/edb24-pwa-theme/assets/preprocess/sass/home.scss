@@ -348,6 +348,7 @@ a:focus {
             font-family: 'Montserrat'; 
         }
         .home_page_wrapper:before {
+            box-sizing: border-box;
             content: "";
             width: 92vw;
             height: 92vh;
@@ -543,16 +544,15 @@ a:focus {
     }
 }
 
-@media (orientation: landscape) and (max-width: 750px){
+@media (orientation: landscape) and (max-width: 900px){
     .home_picture {
         background-position: center top;
     }
     .main_navigation {
         grid-row: 1/2;
-        align-self: end;
     }
     .name_and_intro {
-        grid-row: 4/5;
+        grid-row: 2/3;
     }
     .description {
         --description_custom_corner: 15px;
