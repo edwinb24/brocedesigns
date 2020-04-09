@@ -13,9 +13,12 @@
         ?>
 
 <!-- Critical Styles -->
+
         <style>
-            <?php if(is_front_page()) {
-                include(dirname(__FILE__).'/assets/css/reset.css');
+            <?php 
+            include(dirname(__FILE__).'/assets/css/reset.css');
+
+            if(is_front_page()) {
                     include(dirname(__FILE__).'/assets/css/home.css');
                 } else {
                     include(dirname(__FILE__).'/assets/css/critical.css');
