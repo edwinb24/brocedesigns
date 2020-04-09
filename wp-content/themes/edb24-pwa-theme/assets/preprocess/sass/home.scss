@@ -55,7 +55,8 @@ a:focus {
         font-style: normal;
         display: grid;
         grid-template-columns: repeat(10, 1fr);
-        grid-template-rows: repeat(auto-fit,minmax(70px,1fr));
+        //grid-template-rows: repeat(auto-fit,minmax(70px,1fr));
+        grid-template-rows:  repeat(10, 1fr);
     }
     .home_picture {
         order: 1;
@@ -171,7 +172,7 @@ a:focus {
                                     0px 1px 10px 0px #000;
             transform: scale(0.99);
         }
-        .main_navigation div:hover:before {
+        .main_navigation a:hover:before {
             content: '';
             position: absolute;
             top: 0;
@@ -544,7 +545,7 @@ a:focus {
     }
 }
 
-@media (orientation: landscape) and (max-width: 900px){
+@media (orientation: landscape) and (max-width: 700px) {
     .home_picture {
         background-position: center top;
     }
@@ -563,6 +564,13 @@ a:focus {
         align-self: center;
     }
 }
+
+@media (orientation: landscape) and (min-width: 700px) and (max-width: 1200px) {
+    .description {
+        display: none;
+    }
+}
+
 
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {

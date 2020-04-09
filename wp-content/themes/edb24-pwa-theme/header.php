@@ -11,16 +11,11 @@
             include(dirname(__FILE__).'/assets/variables.php');
             include(dirname(__FILE__).'/assets/google_tag_manager_header.html');
         ?>
-<!-- Critical Styles -->
-    <style>       
-        <?php 
-        include(dirname(__FILE__).'/assets/css/reset.css');
-        ?>
-    </style>
 
 <!-- Critical Styles -->
         <style>
             <?php if(is_front_page()) {
+                include(dirname(__FILE__).'/assets/css/reset.css');
                     include(dirname(__FILE__).'/assets/css/home.css');
                 } else {
                     include(dirname(__FILE__).'/assets/css/critical.css');

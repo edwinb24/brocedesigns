@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('deviceorientation', GyroCameraMovement)
     window.addEventListener("scroll", moveCamera)
     window.addEventListener("mousemove", MouseCameraMovement)
-    displayInstructions()
     setSceneHeight()
 })
 
@@ -52,21 +51,9 @@ function setSceneHeight () {
     let height = (window.innerHeight + perspective * camera_speed + item_z_index * camera_speed * (number_of_items -1)) + 300
     document.documentElement.style.setProperty("--viewportHeight", height)
 }
-function displayInstructions () {
-        if(sessionStorage.getItem('first_visit') === null) {
-            let scrolling_overlay = document.getElementById("scrolling_icon")
-            scrolling_overlay.style.display = "flex"
-            sessionStorage.setItem('first_visit','no')
-        }
-    }
 
 // moveCamera simulate the movement of the camera by converting the user 
 //scrolling onto movement on a 3D space
 function moveCamera() {
-    if(window.pageYOffset < 500){
-        let scrolling_overlay = document.getElementById("scrolling_icon")
-        scrolling_overlay.style.top = "1000px"
-        scrolling_overlay.style.opacity = "0"
-    }
     document.documentElement.style.setProperty("--cameraZ", window.pageYOffset + INITIAL_CAMERA_POSITION)
 }
