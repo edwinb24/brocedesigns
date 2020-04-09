@@ -74,8 +74,10 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
             <?php 
             include(dirname(__FILE__).'/assets/js/header_menu_bar.js');
             include(dirname(__FILE__).'/assets/js/houdini_index.js');
-            if(!is_front_page()) {
-                include(dirname(__FILE__).'/assets/js/3d_scrolling.js');           
+            if(is_front_page()) {
+                include(dirname(__FILE__).'/assets/js/houdini_index_home.js');
+            } else {
+                include(dirname(__FILE__).'/assets/js/3d_scrolling.js');    
             }
             ?>       
         </script>
