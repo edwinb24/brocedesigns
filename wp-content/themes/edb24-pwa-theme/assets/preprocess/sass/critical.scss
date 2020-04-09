@@ -1,6 +1,10 @@
 @import "../../_fonts";
 @import "../../_variables";
 
+:root {
+    --top-menu-height: 235px;
+}
+
 body {
     color: #efefef;
 }
@@ -163,9 +167,9 @@ nav.social_media img {
     }
     .header_menu {
         display: grid;  
-        top: - 235px;
+        top: calc(var(--top-menu-height) * -1);
         transition: top .5s;
-        width: 80vw;
+        width: 100vw;
         position: fixed;
         left: 0;
         padding-top: 10px;
@@ -249,7 +253,7 @@ nav.social_media img {
         right: 0px;
     }
     #toggle-main-menu:checked ~ .menu-on {
-        top: 172px;
+        top: calc(var(--top-menu-height) - 35px);
         background:#e6a935;
         box-shadow: 0px 5px 5px #000;
     }
