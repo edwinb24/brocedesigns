@@ -1,4 +1,6 @@
-
+if('paintWorklet' in CSS) {
+    CSS.paintWorklet.addModule('./custom_corner.js');        
+}
 if('registerProperty' in CSS) {
     CSS.registerProperty({
         name: "--onhover_color1",
