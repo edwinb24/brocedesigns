@@ -1,13 +1,14 @@
 
-const lazy_receiver = document.getElementById("lazy_load_shell")
+    var renderOnLoad = function() {
+        var e = document.getElementById('render-onload');
+        var n = document.createElement('div');
+        n.innerHTML = e.textContent;
+        document.body.appendChild(n);
+        e.parentElement.removeChild(e)
+    };
 
-window.requestIdleCallback(() => {
-    const LAZY_CHUNKS = [
-        ...Array.from(document.querySelectorAll("noscript.lazyload")),
-        ...Array.from(document.querySelectorAll("template.lazyload"))
-    ]
-    // console.log(LAZY_CHUNKS[0])
-    // console.log(LAZY_CHUNKS[1].content.cloneNode(true))
-    // lazy_receiver.appendChild(LAZY_CHUNKS[0])
-
-});
+    if(window.requestAnimationFrame) {
+        window.requestAnimationFrame(function(){window.setTimeout(renderOnLoad, 0)})
+    } else {
+        window.addEventListener('load', renderOnLoad);
+    }
