@@ -82,10 +82,12 @@ nav.social_media img {
                 "logo header_menu";
     }
 
-
-    
     .logo {
         font-size: calc(32px + (46 - 32) * ((100vw - 300px)/ (900 - 300)));
+        --onhover_logo_gradient1: #00a5ff;
+        --onhover_logo_gradient2: #f72e2e;
+        --onhover_logo_gradient3: #5aff28;
+        --onhover_logo_gradient4: #fff389;
     }
 
     .menu-main-menu-container {
