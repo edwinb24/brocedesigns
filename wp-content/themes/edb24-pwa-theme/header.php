@@ -31,7 +31,7 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
 <!doctype html>
 <html lang="en">
 <head>
-
+ 
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><?php wp_title(); ?></title>
@@ -52,7 +52,7 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
             if(is_front_page()) {
                     include(dirname(__FILE__).'/assets/css/home.css');
                 } else {
-                    include(dirname(__FILE__).'/assets/css/critical.css');
+                    include(dirname(__FILE__).'/assets/css/content.css');
                     include(dirname(__FILE__).'/assets/css/3d_styles.css');
                 }
             ?>
