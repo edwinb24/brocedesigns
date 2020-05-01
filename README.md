@@ -3,10 +3,10 @@ Theme for brocedesigns.com, Edwin Broce's personal website.
 Currently in development. Items pending for Ver.1.0:
 
 * Accessibility testing ✔️ 
-* CSS Code Splitting
+* CSS Code Splitting ✔️
 * Image Lazy Loading✔️
 * IE friendly CSS✔️ 
-* Caching Headers
+* Caching Headers ✔️(further implementation in a future version)
 * Service Worker
 
 Home page contain 4 different designs, feel free to play around with the page width 😉
