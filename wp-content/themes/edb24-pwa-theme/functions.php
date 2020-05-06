@@ -19,8 +19,8 @@ add_action('init', 'acme_theme_setup');
  ====================================== 
  */
 
-function job_custom_post_type(){
-	$labels	= array(
+function theme_custom_post_type(){
+	$job_labels	= array(
 		'name' => 'Jobs',
 		'singular' => 'Job',
 		'add_new' => 'Add Job',
@@ -34,8 +34,8 @@ function job_custom_post_type(){
 		'not_found_in_trash' => 'No jobs found in trash',
 		'parent_item_colon' => 'Job Item'
 	);
-	$args = array(
-		'labels' => $labels,
+	$job_args = array(
+		'labels' => $job_labels,
 		'public' => true,
 		'has_archive' => true,
 		'publicly_queryable' => true,
@@ -55,7 +55,47 @@ function job_custom_post_type(){
 			'revision'
 		)
 	);
-	register_post_type('jobs', $args);
+	register_post_type('jobs', $job_args);
+
+	$proj_labels = array(
+		'name' => 'Projects',
+		'singular' => 'Project',
+		'add_new' => 'Add Project',
+		'all_items' => 'All Project',
+		'add_new_item' => 'Add Project',
+		'edit_item' => 'Edit Project',
+		'new_item' => 'New Project',
+		'view_item' => 'View Project',
+		'search_item' => 'Search Project',
+		'not_found' => 'No projects found',
+		'not_found_in_trash' => 'No projects found in trash',
+		'parent_item_colon' => 'Project Item'
+	);
+	$proj_args = array(
+		'labels' => $proj_labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'taxonomies' => array('category', 'post_tag'),
+		'menu_position' => 6,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
+		'supports' => array(
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'revision'
+		)
+	);
+
+	register_post_type('projects', $proj_args);
+	register_post_type('jobs', $job_args);
 }
 
-add_action('init', 'job_custom_post_type');
+add_action('init', 'theme_custom_post_type');
+

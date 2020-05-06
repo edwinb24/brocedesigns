@@ -1,28 +1,28 @@
 <?php
-//get the last-modified-date of this very file
-$lastModified=filemtime(__FILE__);
-//get a unique hash of this file (etag)
-$etagFile = md5_file(__FILE__);
-//get the HTTP_IF_MODIFIED_SINCE header if set
-$ifModifiedSince=(isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
-//get the HTTP_IF_NONE_MATCH header if set (etag: unique file hash)
-$etagHeader=(isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
+// //get the last-modified-date of this very file
+// $lastModified=filemtime(__FILE__);
+// //get a unique hash of this file (etag)
+// $etagFile = md5_file(__FILE__);
+// //get the HTTP_IF_MODIFIED_SINCE header if set
+// $ifModifiedSince=(isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false);
+// //get the HTTP_IF_NONE_MATCH header if set (etag: unique file hash)
+// $etagHeader=(isset($_SERVER['HTTP_IF_NONE_MATCH']) ? trim($_SERVER['HTTP_IF_NONE_MATCH']) : false);
 
-//set last-modified header
-header("Last-Modified: ".gmdate("D, d M Y H:i:s", $lastModified)." GMT");
-//set etag-header
-header("Etag: $etagFile");
-//make sure caching is turned on
-header('Cache-Control: max-age=31536000');
+// //set last-modified header
+// header("Last-Modified: ".gmdate("D, d M Y H:i:s", $lastModified)." GMT");
+// //set etag-header
+// header("Etag: $etagFile");
+// //make sure caching is turned on
+// header('Cache-Control: max-age=31536000');
 
-//check if page has changed. If not, send 304 and exit
-if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader == $etagFile)
-{
-       header("HTTP/1.1 304 Not Modified");
-       exit;
-}
+// //check if page has changed. If not, send 304 and exit
+// if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader == $etagFile)
+// {
+//        header("HTTP/1.1 304 Not Modified");
+//        exit;
+// }
 
-//echo "This page was last modified: ".date("d.m.Y H:i:s",time());
+// //echo "This page was last modified: ".date("d.m.Y H:i:s",time());
 
 ?>
 
@@ -48,13 +48,15 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
         <style>
             <?php 
             include(dirname(__FILE__).'/assets/css/reset.css');
-
             if(is_front_page()) {
                     include(dirname(__FILE__).'/assets/css/home.css');
-                } else {
-                    include(dirname(__FILE__).'/assets/css/content.css');
-                    include(dirname(__FILE__).'/assets/css/3d_styles.css');
-                }
+            } else {
+                include(dirname(__FILE__).'/assets/css/content.css');
+            }
+            if(get_post_type() == 'jobs')
+                include(dirname(__FILE__).'/assets/css/3d_styles.css');
+            if(get_post_type() == 'projects')
+                include(dirname(__FILE__).'/assets/css/projects.css');
             ?>
         </style>
 
@@ -76,7 +78,7 @@ if (@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])==$lastModified || $etagHeader
             include(dirname(__FILE__).'/assets/js/houdini_index.js');
             if(is_front_page()) {
                 include(dirname(__FILE__).'/assets/js/houdini_index_home.js');
-            } else {
+            } elseif(get_post_type() == 'jobs') {
                 include(dirname(__FILE__).'/assets/js/3d_scrolling.js');    
             }
             ?>       
