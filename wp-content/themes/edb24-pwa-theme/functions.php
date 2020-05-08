@@ -8,6 +8,7 @@ Adding Menu Support
 
 function acme_theme_setup() {
 	add_theme_support('menus');
+	add_theme_support('post-thumbnails');
 	register_nav_menu('header_menu', 'Main Menu');
 }
 
@@ -69,7 +70,7 @@ function theme_custom_post_type(){
 		'search_item' => 'Search Project',
 		'not_found' => 'No projects found',
 		'not_found_in_trash' => 'No projects found in trash',
-		'parent_item_colon' => 'Project Item'
+		'parent_item_colon' => 'Project Item',
 	);
 	$proj_args = array(
 		'labels' => $proj_labels,

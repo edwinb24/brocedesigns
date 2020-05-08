@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
 <div class="<?php echo get_post_type() ?>_content">
+<h1>Web Developer Portfolio</h1>
+<p>My web developer portfolio have took me to large and small 
+	companies using back-end and front-end techlogies</p>
 <?php 
 $args = array( 'post_type' => 'projects', 'posts_per_page' => 10 );
 $the_query = new WP_Query( $args ); 
