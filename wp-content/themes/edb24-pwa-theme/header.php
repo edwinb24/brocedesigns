@@ -49,12 +49,12 @@
             <?php 
             include(dirname(__FILE__).'/assets/css/reset.css');
             if(is_front_page()) {
-                    include(dirname(__FILE__).'/assets/css/home.css');
+                include(dirname(__FILE__).'/assets/css/home.css');
             } else {
                 include(dirname(__FILE__).'/assets/css/content.css');
             }
             if(get_post_type() == 'jobs')
-                include(dirname(__FILE__).'/assets/css/3d_styles.css');
+            include(dirname(__FILE__).'/assets/css/3d_styles.css');
             if(get_post_type() == 'projects')
                 include(dirname(__FILE__).'/assets/css/projects.css');
             ?>

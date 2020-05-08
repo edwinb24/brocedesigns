@@ -1,14 +1,6 @@
 <?php get_header(); ?>
-<div class="viewport">
-<span class="separating_line"></span>
-<div id="scrolling_icon">
-	<div class="scrolling_message_text"><span>Scroll</span> <span>to</span> <span>navigate</span></div>
-	<div class="scrolling_icon_arrow">↓</div>
-</div>
-<div class="scene_3d_wrapper">
-<div class="scene_3d_container">
-<div class="main_content_wrapper project_list_page">
 
+<div class="<?php echo get_post_type() ?>_content">
 <?php 
 $args = array( 'post_type' => 'projects', 'posts_per_page' => 10 );
 $the_query = new WP_Query( $args ); 
@@ -22,13 +14,22 @@ $the_query = new WP_Query( $args );
 			$i++; ?>
 			<article id="page-<?php print(strtolower(str_replace(' ', '-', get_the_title()))); ?>" <?php post_class($project_class); ?>>
 				<?php the_title('<h1 class="entry-title">','</h1>' ); ?>
-				<?php the_content(); ?>
+				<div class="main-content">
+					<ul>
+						<?php
+						$tags = get_tags();
+						if ( $tags ) :
+							foreach ( $tags as $tag ) : ?>
+								<li><a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>"><?php echo esc_html( $tag->name ); ?></a></li>
+							<?php endforeach; ?>
+						<?php endif; ?>
+					</ul>
+				</div>
 			</article>
 		<?php endwhile;	
 	endif;		
 	?>
 </div>
-</div>
-</div>
-</div>
+
+
 <?php get_footer(); ?>
