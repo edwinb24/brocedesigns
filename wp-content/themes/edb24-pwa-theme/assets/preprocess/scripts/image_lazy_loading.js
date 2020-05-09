@@ -7,9 +7,9 @@ const observer_options = {
 
 function preloadImage(img){
     let src = img.style.backgroundImage
-    src = src.replace("?tr=w-20,h-20", ""); 
+    src = src.replace("?tr=w-20,h-20", "")
     if(window.innerWidth < 450 )
-        src = src.replace(".jpg", "_mobile.jpg"); 
+        src = src.replace(".jpg", "_mobile.jpg")
     img.style.backgroundImage = src
 }
 
