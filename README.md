@@ -6,6 +6,7 @@ Currently in development. Ver.2.0:
 * Adding new super awesome list of projects
 * Service Worker
 * Routing
+* Add Favicon
 * Add animation to page title. Simillar to page: https://bruno-simon.com/
 * Add proper about page, and convert current page into a jobs page or a subdomain consider a different project
 
