@@ -1,10 +1,39 @@
+body {
+    background-color: #313c4e;
+}
+
 .projects_content {
+    color: #d2d2d2;
     padding-left: 5vw;
     padding-right: 5vw;
     margin: auto;
     max-width: 800px;
     font-family: 'Montserrat';
+    font-weight: 800;
 }
+
+.projects_content .intro h1 {
+    position: relative;
+}
+
+.projects_content .intro h1::after {
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    background: 
+        linear-gradient(to right,
+          #d2d2d2 0%,
+          rgba(125,185,232,0.32) 48%,
+          rgba(125,185,232,0) 100%);
+}
+
+
+
+
+
 
 .projects_content .intro {
     margin-bottom: 10px;
@@ -17,16 +46,10 @@
     gap: 50px;
 }
 
-.projects_content .content article {
-    width: 100%;
-    background-color: aliceblue;
-    border: 1px solid #000;
-}
-
 .projects_content .content article .entry-title {
-    font-weight: 800;
     text-align: center;
-    background-color: #ccc;
+    background-color: #d2d2d2;
+    color: #313c4e;
     padding: 10px 20px;
     margin: 0px;
 }
@@ -39,11 +62,19 @@
 .projects_content .content article .main-content .project_image{
     grid-column: 1/2;
     grid-row: 1/2;
-    box-shadow: 0 0 50px rgba(0,0,0,.75) inset;
+    z-index: 7;
+    position: relative;
 }
 
-.projects_content .content article .main-content .project_image.hover_image{
+.projects_content .content article .main-content .project_image::after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
     z-index: 8;
+    top: 0;
+    width: 100%;   
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.75) inset, -20px -20px 40px rgba(0,0,0,0.75) inset;
 }
 
 .projects_content .content article .main-content .project_image.hover_image{
@@ -64,14 +95,14 @@
     flex-flow: wrap;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 20px;
+    width: 80%;
+    margin: auto;
     z-index: 10;
 }
 
 
 .projects_content .content article .main-content li {
     padding: 5px 10px;
-    font-weight: 800;
     background-color: #666;
     color: #eee;
     border-radius: 3px;
@@ -79,22 +110,24 @@
 
     transform: rotateX(91deg);
     transition: transform .6s;
-    transition-delay: .5s,.5s;
     backface-visibility: hidden;
     transform-origin: 50% 50% -10px;
     box-shadow: 3px 3px 2px transparent;
+    opacity: 0;
+}
+
+.projects_content .content article .main-content {
+    @for $i from 1 through 10 {
+        li:nth-of-type(#{$i}) {
+            transition-delay: calc(.5s + #{$i}*0.08s);
+        }
+    }
 }
 
 .projects_content .content article:hover .main-content li {
     transform: rotateX(0);
     box-shadow: 3px 3px 2px #222;
     z-index: 1;
+    opacity: 1;
 }
 
-.projects_content .content article .main-content li span{
-
-}
-
-.projects_content .content article:hover .main-content li span{
-
-}

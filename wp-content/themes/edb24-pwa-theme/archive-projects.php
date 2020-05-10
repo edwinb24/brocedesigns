@@ -51,7 +51,7 @@ function returnURL($img_url) {
 							$tags = get_tags();
 							if ( $tags ) :
 								foreach ( $tags as $tag ) : ?>
-									<li><span></span><?php echo esc_html( $tag->name ); ?></span></li>
+									<li><?php echo esc_html( $tag->name ); ?></li>
 								<?php endforeach; ?>
 							<?php endif; ?>
 						</ul>
