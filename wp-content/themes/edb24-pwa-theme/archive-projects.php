@@ -7,7 +7,7 @@ function returnURL($img_url) {
 	$img_url = substr($img_url, $j, strlen($img_url));
 	$k = strpos($img_url, '" class');
 	$img_url = substr($img_url, 0, $k);
-	$img_url = "https://ik.imagekit.io/edwinb24/". $img_url . "?tr=w-500,h-290";
+	$img_url = "https://ik.imagekit.io/edwinb24/". $img_url;
 	return $img_url;
 }
   
@@ -33,15 +33,13 @@ function returnURL($img_url) {
 			while( $the_query->have_posts() ): $the_query->the_post();
 				$main_image = get_the_post_thumbnail();
 				$hover_image = get_field("image");
-
-				var_dump($hover_image);
 				
 				$main_image = returnURL($main_image);
 				$hover_image = returnURL($hover_image);
 
-				// echo $main_image;
-				// echo "<br>";
-				// echo $hover_image;
+				echo $main_image;
+				echo "<br>";
+				echo $hover_image;
 
 				$project_class = $item . $i; 
 				$i++; ?>
@@ -53,10 +51,20 @@ function returnURL($img_url) {
 							$tags = get_tags();
 							if ( $tags ) :
 								foreach ( $tags as $tag ) : ?>
-									<li><a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" title="<?php echo esc_attr( $tag->name ); ?>"><?php echo esc_html( $tag->name ); ?></a></li>
+									<li><span></span><?php echo esc_html( $tag->name ); ?></span></li>
 								<?php endforeach; ?>
 							<?php endif; ?>
 						</ul>
+						<picture class="hover_image project_image">
+							<source media="(min-width: 650px)" srcset="<?php echo $main_image . "?tr=w-500,h-290";?>">
+							<source media="(min-width: 465px)" srcset="<?php echo $main_image . "?tr=w-500,h-290";?>">
+							<img src="<?php echo $main_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>" style="width:auto;">
+						</picture> 
+						<picture class="main_image project_image">
+							<source media="(min-width: 650px)" srcset="<?php echo $main_image . "?tr=w-500,h-290";?>">
+							<source media="(min-width: 465px)" srcset="<?php echo $main_image . "?tr=w-500,h-290";?>">
+							<img src="<?php echo $main_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>" style="width:auto;">
+						</picture> 
 					</div>
 				</article>
 			<?php endwhile;	
