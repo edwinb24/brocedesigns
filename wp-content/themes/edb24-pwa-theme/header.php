@@ -68,6 +68,10 @@
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_header.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_content.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_footer.css">
+            <?php if(get_post_type() == 'projects') : ?>
+                <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_projects.css">
+            <?php endif ?>
+
     <?php } ?>
 </noscript>
         

@@ -34,6 +34,17 @@ body {
           rgba(125,185,232,0) 100%);
 }
 
+.projects_content .content article .main-content .project_image::after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    width: 100%;   
+    box-shadow: 20px 20px 40px rgba(0,0,0,0.75) inset, -20px -20px 40px rgba(0,0,0,0.75) inset;
+}
+
 .projects_content .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -61,76 +72,13 @@ body {
     position: relative;
 }
 
-.projects_content .content article .main-content .project_image::after {
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    z-index: 8;
-    top: 0;
-    width: 100%;   
-    box-shadow: 20px 20px 40px rgba(0,0,0,0.75) inset, -20px -20px 40px rgba(0,0,0,0.75) inset;
-}
-
 .projects_content .content article .main-content .project_image.hover_image{
     transform: translateY(-290px);
-    z-index: 9;
-    transition: transform .6s;
-    transition-timing-function: cubic-bezier(.28,.73,.24,1.03);
 }
-
-.projects_content .content article:hover .main-content .project_image.hover_image {
-    transform: translateY(0px);
-}
-
-.projects_content .content article .main-content ul {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-    z-index: 10;
-}
-
 
 .projects_content .content article .main-content li {
-    padding: 5px 10px;
-    background-color: #666;
-    color: #eee;
-    border-radius: 3px;
-    margin-top: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    transform: rotateX(91deg);
-    transition: transform .6s;
-    backface-visibility: hidden;
-    transform-origin: 50% 50% -10px;
-    box-shadow: 3px 3px 2px transparent;
     opacity: 0;
 }
-.projects_content .content article .main-content li.more {
-    transform: rotateX(-91deg);
-    transition-delay: 1.6s !important;
-}
-
-.projects_content .content article .main-content {
-    @for $i from 1 through 10 {
-        li:nth-of-type(#{$i}) {
-            transition-delay: calc(.5s + #{$i}*0.08s);
-        }
-    }
-}
-
-.projects_content .content article:hover .main-content li {
-    transform: rotateX(0);
-    box-shadow: 3px 3px 2px #222;
-    z-index: 1;
-    opacity: 1;
-}
-
 
 @media screen and (max-width: 750px) {
     .projects_content .content {
