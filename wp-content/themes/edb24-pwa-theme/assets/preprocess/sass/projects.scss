@@ -4,12 +4,16 @@ body {
 
 .projects_content {
     color: #d2d2d2;
-    padding-left: 5vw;
-    padding-right: 5vw;
     margin: auto;
-    max-width: 800px;
+    max-width: 1000px;
     font-family: 'Montserrat';
     font-weight: 800;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.projects_content .intro {
+    margin-bottom: 60px;
 }
 
 .projects_content .intro h1 {
@@ -28,15 +32,6 @@ body {
           #d2d2d2 0%,
           rgba(125,185,232,0.32) 48%,
           rgba(125,185,232,0) 100%);
-}
-
-
-
-
-
-
-.projects_content .intro {
-    margin-bottom: 10px;
 }
 
 .projects_content .content {
@@ -107,13 +102,18 @@ body {
     color: #eee;
     border-radius: 3px;
     margin-top: 10px;
-
+    margin-left: 5px;
+    margin-right: 5px;
     transform: rotateX(91deg);
     transition: transform .6s;
     backface-visibility: hidden;
     transform-origin: 50% 50% -10px;
     box-shadow: 3px 3px 2px transparent;
     opacity: 0;
+}
+.projects_content .content article .main-content li.more {
+    transform: rotateX(-91deg);
+    transition-delay: 1.6s !important;
 }
 
 .projects_content .content article .main-content {
@@ -131,3 +131,40 @@ body {
     opacity: 1;
 }
 
+
+@media screen and (max-width: 750px) {
+    .projects_content .content {
+        grid-template-columns: 1fr;
+    }
+
+    .projects_content .intro h1 {
+        font-size: calc(24px + (36 - 24) * ((100vw - 600px) / (1600 - 600)));
+        z-index: -1;
+    }
+
+    .projects_content .intro p {
+        font-size: calc(16px + (22 - 16) * ((100vw - 600px) / (1600 - 600)));
+    }
+
+    .projects_content .content article .entry-title {
+        font-size: calc(20px + (28 - 20) * ((100vw - 600px) / (1600 - 600)));
+    }
+
+    .projects_content .content article .main-content .project_image.hover_image {
+        display: none;
+    }
+
+    .projects_content .content article .main-content ul {
+        font-size: calc(16px + (28 - 16) * ((100vw - 600px) / (1600 - 600)));
+        width: 95%;
+    }
+
+    .projects_content .content article .main-content {
+        li, li.more  {
+            transform: rotateX(0);
+            box-shadow: 3px 3px 2px #222;
+            z-index: 1;
+            opacity: 1;
+        }
+    }
+}

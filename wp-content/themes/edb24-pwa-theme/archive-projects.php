@@ -1,16 +1,18 @@
 <?php get_header(); ?>
 
 <?php
+	function returnURL($img_url) {
+		$j = strpos($img_url, "wp-content");
+		$img_url = substr($img_url, $j, strlen($img_url));
 
-function returnURL($img_url) {
-	$j = strpos($img_url, "wp-content");
-	$img_url = substr($img_url, $j, strlen($img_url));
-	$k = strpos($img_url, '" class');
-	$img_url = substr($img_url, 0, $k);
-	$img_url = "https://ik.imagekit.io/edwinb24/". $img_url;
-	return $img_url;
-}
-  
+		$k = strpos($img_url, '" class');
+		if($k > -1)
+			$img_url = substr($img_url, 0, $k);
+		else
+			$img_url = substr($img_url, 0, strlen($img_url));
+		$img_url = "https://ik.imagekit.io/edwinb24/". $img_url;
+		return $img_url;
+	}
 ?>
 
 
@@ -32,41 +34,34 @@ function returnURL($img_url) {
 		if( $the_query->have_posts() ):
 			while( $the_query->have_posts() ): $the_query->the_post();
 				$main_image = get_the_post_thumbnail();
-				$hover_image = get_field("image");
-				
+				$hover_image = get_field("additional_image");
 				$main_image = returnURL($main_image);
 				$hover_image = returnURL($hover_image);
 
-				echo $main_image;
-				echo "<br>";
-				echo $hover_image;
-
 				$project_class = $item . $i; 
 				$i++; ?>
-				<article id="page-<?php print(strtolower(str_replace(' ', '-', get_the_title()))); ?>" <?php post_class($project_class); ?>>
+				<a href="<?php the_permalink() ?>"><article id="page-<?php print(strtolower(str_replace(' ', '-', get_the_title()))); ?>" <?php post_class($project_class); ?>>
 					<?php the_title('<h1 class="entry-title">','</h1>' ); ?>
 					<div class="main-content">
 						<ul>
 							<?php
 							$tags = get_tags();
 							if ( $tags ) :
-								foreach ( $tags as $tag ) : ?>
-									<li><?php echo esc_html( $tag->name ); ?></li>
-								<?php endforeach; ?>
+								$y = count($tags) > 7 ? 7 : count($tags);
+								for ($x=0; $x < $y; $x++) { ?>
+									<li><?php echo esc_html( $tags[$x]->name ); ?></li>
+								<?php } ?>
+									<li class="more">More...</li>
 							<?php endif; ?>
 						</ul>
 						<picture class="hover_image project_image">
-							<source media="(min-width: 650px)" srcset="<?php echo $main_image . "?tr=w-500,h-290";?>">
-							<source media="(min-width: 465px)" srcset="<?php echo $main_image . "?tr=w-500,h-290";?>">
-							<img src="<?php echo $main_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>" style="width:auto;">
+							<img src="<?php echo $hover_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>">
 						</picture> 
 						<picture class="main_image project_image">
-							<source media="(min-width: 650px)" srcset="<?php echo $main_image . "?tr=w-500,h-290";?>">
-							<source media="(min-width: 465px)" srcset="<?php echo $main_image . "?tr=w-500,h-290";?>">
-							<img src="<?php echo $main_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>" style="width:auto;">
+							<img src="<?php echo $main_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>">
 						</picture> 
 					</div>
-				</article>
+				</article></a>
 			<?php endwhile;	
 		endif;		
 		?>
