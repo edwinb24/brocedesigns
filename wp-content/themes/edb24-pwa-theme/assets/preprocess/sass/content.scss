@@ -16,6 +16,7 @@
     font-size: calc(28px + (36 - 28) * ((100vw - 300px)/ (1600 - 1000)));
     font-weight: 600;
     grid-area: logo;
+    color: #d5d5d5;// Houdini - Progressive Enhancement Support
 }
 
 .header_navigation {

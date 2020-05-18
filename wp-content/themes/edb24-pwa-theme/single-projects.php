@@ -24,9 +24,9 @@
 
 ?>
 
-<div class="<?php echo get_post_type() ?>_content">
+<div class="<?php echo get_post_type() ?>_content single">
     <div class="back_link">
-       <a>
+       <a href="/projects">
            < All Projects
        </a>
     </div>

@@ -54,9 +54,12 @@
                 include(dirname(__FILE__).'/assets/css/content.css');
             }
             if(get_post_type() == 'jobs')
-            include(dirname(__FILE__).'/assets/css/3d_styles.css');
-            if(get_post_type() == 'projects')
+                include(dirname(__FILE__).'/assets/css/3d_styles.css');
+            if(get_post_type() == 'projects') {
                 include(dirname(__FILE__).'/assets/css/projects.css');
+                if(!is_post_type_archive())
+                    include(dirname(__FILE__).'/assets/css/project_single.css');
+            }
             ?>
         </style>
 
@@ -68,7 +71,7 @@
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_header.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url');  ?>/assets/css/lazy_content.css">
             <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_footer.css">
-            <?php if(get_post_type() == 'projects') : ?>
+            <?php if(get_post_type() == 'projects' && is_post_type_archive()) : ?>
                 <link rel="stylesheet" href="<?php echo get_bloginfo('template_url'); ?>/assets/css/lazy_projects.css">
             <?php endif ?>
 
