@@ -26,8 +26,8 @@
 
 <div class="<?php echo get_post_type() ?>_content single">
     <div class="back_link">
-       <a href="/projects">
-           < All Projects
+       <a href="/projects" aria-label="Return to All Projects">
+           < All PROJECTS
        </a>
     </div>
 	<div class="intro">
@@ -36,10 +36,12 @@
     <div class="content">
         <div class="project_images">
             <picture class="hover_image project_image">
-                <img src="<?php echo $hover_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>">
+                <source media="(max-width: 650px)" srcset="<?php echo $hover_image . "?tr=w-500,h-290";?>">
+                <img src="<?php echo $hover_image . "?tr=w-800,h-464";?>" alt="<?php echo (the_title() . " Image")?>">
             </picture> 
             <picture class="main_image project_image">
-                <img src="<?php echo $main_image . "?tr=w-500,h-290";?>" alt="<?php echo (the_title() . " Image")?>">
+                <source media="(max-width: 650px)" srcset="<?php echo $main_image . "?tr=w-500,h-290";?>">
+                <img src="<?php echo $main_image . "?tr=w-800,h-464";?>" alt="<?php echo (the_title() . " Image")?>">
             </picture> 
         </div>
         <div class="project_description">

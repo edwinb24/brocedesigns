@@ -13,7 +13,7 @@ function style() {
             '!./assets/preprocess/sass/**/home.scss', 
             './assets/preprocess/sass/**/*.scss'
           ])
-        .pipe(sass({outputStyle: "compressed"}).on("error", sass.logError))
+        .pipe(sass().on("error", sass.logError))
         .pipe(autoprefixer({grid : "autoplace"}))
         .pipe(cleanCSS())
         .pipe(gulp.dest('./assets/css'))

@@ -4,6 +4,7 @@
 
 .projects_content.single .content {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 
 .projects_content.single {
@@ -14,6 +15,7 @@
 .project_images {
     display: grid;
     align-self: flex-start;
+    z-index: -1;
 }
 
 .hover_image {
@@ -53,5 +55,6 @@
 @media screen and (max-width: 1200px) {
     .projects_content.single .content {
         grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
     }
 }
