@@ -11,7 +11,7 @@
 	</nav>
 	<nav class="main_navigation"  aria-label="Main Navigation">
 		<div role="button"><a href="/jobs">About</a></div>
-		<div role="button"><a href="https://codepen.io/edwinb24">The Lab</a></div>
+		<div role="button"><a href="/projects">Portfolio</a></div>
 		<div role="button"><a href="https://www.youtube.com/channel/UC316MzN9QyFvGJisgyjQWzw/">Tutorials</a></div>
 	</nav>
 	<h1 class="name_and_intro">
