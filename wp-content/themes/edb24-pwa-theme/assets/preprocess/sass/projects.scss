@@ -51,7 +51,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 50px;
+    row-gap: 20px;
+    column-gap: 50px;
 }
 
 .projects_content .content a {

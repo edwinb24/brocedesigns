@@ -45,7 +45,7 @@
 					<div class="main-content">
 						<ul>
 							<?php
-							$tags = get_tags();
+							$tags = get_the_tags();
 							if ( $tags ) :
 								$y = count($tags) > 7 ? 7 : count($tags);
 								for ($x=0; $x < $y; $x++) { ?>
