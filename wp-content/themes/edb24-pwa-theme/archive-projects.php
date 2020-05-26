@@ -19,9 +19,7 @@
 <div class="<?php echo get_post_type() ?>_content">
 	<div class="intro">
 		<h1>Web Developer Portfolio</h1>
-		<p>My web developer portfolio have took me to large and small 
-			companies using back-end and front-end techlogies
-		</p>
+		<p>My career in web development has taken me to small and large companies using back-end and front-end technologies.</p>
 	</div>
 	<div class="content">
 		<?php 
