@@ -94,7 +94,44 @@ function theme_custom_post_type(){
 		)
 	);
 
+	$pres_labels = array(
+		'name' => 'Presentations',
+		'singular' => 'Presentation',
+		'add_new' => 'Add Presentation',
+		'all_items' => 'All Presentation',
+		'add_new_item' => 'Add Presentation',
+		'edit_item' => 'Edit Presentation',
+		'new_item' => 'New Presentation',
+		'view_item' => 'View Presentation',
+		'search_item' => 'Search Presentation',
+		'not_found' => 'No presentations found',
+		'not_found_in_trash' => 'No presentations found in trash',
+		'parent_item_colon' => 'Presentation Item',
+	);
+	$pres_args = array(
+		'labels' => $pres_labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'taxonomies' => array('category', 'post_tag'),
+		'menu_position' => 7,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
+		'supports' => array(
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'revision'
+		)
+	);
+
 	register_post_type('projects', $proj_args);
+	register_post_type('presentations', $pres_args);
 	register_post_type('jobs', $job_args);
 }
 
