@@ -73,7 +73,7 @@
 }
 
 .links_list .wp-block-column p {
-    font-size: clamp(14px,2vw,20px);
+    font-size: clamp(14px,5vw,20px);
     text-align: center;
     grid-row: 2/3;
     grid-column: 1/2;
@@ -93,7 +93,7 @@
     pointer-events: none;
 }
 
-a.disabled_link img {
+.disabled_link img {
     filter: grayscale(.8);
     pointer-events: none;
 }
