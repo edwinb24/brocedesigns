@@ -5,7 +5,7 @@
 
 .presentations_content h2 {
     position: relative;
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
 }
 
 .presentations_content h2::after {
@@ -31,6 +31,8 @@
 .links_list .wp-block-column {
     display: grid;
     grid-auto-flow: row;
+    grid-template-rows: none;
+    grid-template-columns: none;
 }
 
 .links_list .wp-block-column h3, h4 {
@@ -57,7 +59,7 @@
     top: 0;
     opacity: 0;
     z-index: 9;
-    transition: opacity 0.6s;
+    transition: opacity 0.4s;
 }
 .links_list .wp-block-column:hover figure a:after{
     opacity: 1;
@@ -79,13 +81,21 @@
     align-self: center;
     z-index: 10;
     opacity: 0;
-    transition: opacity .6s;
-    transition-delay: .4s;
+    transition: opacity .4s ease .3s;
     padding: 10px;
 }
 
 .links_list .wp-block-column:hover p {
     opacity: 1;
+}
+
+.disabled_link {
+    pointer-events: none;
+}
+
+a.disabled_link img {
+    filter: grayscale(.8);
+    pointer-events: none;
 }
 
 @mixin notAsModernBrowsers() {
