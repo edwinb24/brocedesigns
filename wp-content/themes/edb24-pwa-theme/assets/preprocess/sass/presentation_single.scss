@@ -1,6 +1,6 @@
 .presentations_content {
     margin-top: 20px;
-
+    max-width: 1400px;
 }
 
 .presentations_content h2 {
@@ -36,8 +36,9 @@
 }
 
 .links_list .wp-block-column h3, h4 {
-        display: block;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: #d2d2d2;
         color: #313c4e;
         padding: 10px 20px;
@@ -47,8 +48,9 @@
 .links_list .wp-block-column a {
     display: block;
 }
+
 .links_list .wp-block-column figure a {
-    position: relative;
+position: relative;
 }
 .links_list .wp-block-column figure a:after{
     position: absolute;

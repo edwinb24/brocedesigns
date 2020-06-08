@@ -25,11 +25,6 @@
 ?>
 
 <div class="<?php echo get_post_type() ?>_content single projects_content">
-    <div class="back_link">
-       <a href="/projects" aria-label="Return to All Projects">
-           < All PRESENTATIONS
-       </a>
-    </div>
 	<div class="intro">
         <?php the_title('<h1 class="entry-title">','</h1>' ); ?>
     </div>
