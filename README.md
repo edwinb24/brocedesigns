@@ -1,4 +1,4 @@
-The theme for brocedesigns.com, Edwin Broce's personal website.
+The theme for edwinbroce.com, Edwin Broce's personal website.
 
 Currently in development. Ver.2.0:
 
