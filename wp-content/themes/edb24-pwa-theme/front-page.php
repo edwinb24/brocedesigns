@@ -10,7 +10,7 @@
 		<a href="https://twitter.com/edwin_b24" target="_blank"  rel="nofollow noreferrer"><img src="https://ik.imagekit.io/edwinb24/Social_Media_Icons/icons8-twitter-50_4MdNhJlT4.png" alt="Go to My Twitter"></a>
 	</nav>
 	<nav class="main_navigation"  aria-label="Main Navigation">
-		<div role="button"><a href="/jobs">About</a></div>
+		<div role="button"><a href="/jobs">Experience</a></div>
 		<div role="button"><a href="/projects">Portfolio</a></div>
 		<div role="button"><a href="https://www.youtube.com/channel/UC316MzN9QyFvGJisgyjQWzw/">Tutorials</a></div>
 	</nav>
