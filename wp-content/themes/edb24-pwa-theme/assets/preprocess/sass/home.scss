@@ -94,7 +94,7 @@ body {
             grid-template-columns: repeat(3,170px);
             text-align: center;
             justify-content: center;
-            font-size: calc(16px + (18 - 16) * ((100vw - 1000px)/ (1600 - 1000)));
+            font-size: calc(16px + (17 - 16) * ((100vw - 1000px)/ (1600 - 1000)));
         }
         .main_navigation a {
             display: block;
